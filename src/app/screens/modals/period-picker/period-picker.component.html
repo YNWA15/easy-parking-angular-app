@@ -1,4 +1,4 @@
-<div >
+<div>
   <div class="modalBodyContainter" style="user-select: none;">
     <div class="row">
       <h3 *ngIf="!isInEditMode">Изберете период, за който искате да резервирате място в паркинг</h3>
@@ -7,13 +7,11 @@
     </div>
 
     <div class="row">
-
-      <!-- <button *ngIf="showTimePickerForStart" (click)="openPickerStart()">час за начало</button> -->
-      <button style="width: 48%; margin: auto; background-color: #55595d82;" *ngIf="showTimePickerForStart" (click)="timePickerService.timeForStartPeriod = null" type="button"
-        class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-sm16">час за начало</button>
-      <!-- <button #endTimePicker *ngIf="showTimePickerForEnd" (click)="openPickerEnd()">час за край</button> -->
-      <button style="width: 48%; background-color: #55595d82;  margin: auto;" *ngIf="showTimePickerForEnd" type="button" class="btn btn-primary" data-toggle="modal"
-        data-target=".bd-example-modal-sm17">час за krai</button>
+      <button style="width: 48%; margin: auto; background-color: #55595d82;" *ngIf="showTimePickerForStart"
+        (click)="timePickerService.timeForStartPeriod = null" type="button" class="btn btn-primary" data-toggle="modal"
+        data-target=".bd-example-modal-sm16">час за начало</button>
+      <button style="width: 48%; background-color: #55595d82;  margin: auto;" *ngIf="showTimePickerForEnd" type="button"
+        class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-sm17">час за krai</button>
     </div>
     <div
       *ngIf="datePickerService.dateRangePickerStartDate !== null && datePickerService.dateRangePickerEndDate !== null  && timePickerService.timeForStartPeriod !== null && timePickerService.timeForEndPeriod !== null && errorPeriod()">
@@ -40,38 +38,28 @@
           {{datePickerService.dateRangePickerStartDate?.getDate()}}.{{datePickerService.dateRangePickerStartDate?.getMonth()}}.{{datePickerService.dateRangePickerStartDate?.getFullYear()}}
           до {{timePickerService.timeForEndPeriod?.getHours()}}:{{timePickerService.timeForEndPeriod?.getMinutes()}} на
           {{datePickerService.dateRangePickerEndDate?.getDate()}}.{{datePickerService.dateRangePickerEndDate?.getMonth()}}.{{datePickerService.dateRangePickerEndDate?.getFullYear()}}
-  
         </h3>
-        
       </div>
       <div style="    display: flex;">
-        <button [disabled]="registrationNumberForTheReservation == null || registrationNumberForTheReservation == ''" class="btn btn-info" style="margin:auto" (click)="onSubmit()">Провери за свободни места</button>
+        <button [disabled]="registrationNumberForTheReservation == null || registrationNumberForTheReservation == ''"
+          class="btn btn-info" style="margin:auto" (click)="onSubmit()">Провери за свободни места</button>
         <button class="btn" style="margin:auto" (click)="cancel()">Cancel</button>
       </div>
-
 
       <div *ngIf="isInEditMode">
         <h3>Новият период на резервацията да започва от
           {{timePickerService.timeForStartPeriod?.getHours()}}:{{timePickerService.timeForStartPeriod?.getMinutes()}} на
           {{datePickerService.dateRangePickerStartDate?.getDate()}}.{{datePickerService.dateRangePickerStartDate?.getMonth()!+1}}.{{datePickerService.dateRangePickerStartDate?.getFullYear()}}
           до {{timePickerService.timeForEndPeriod?.getHours()}}:{{timePickerService.timeForEndPeriod?.getMinutes()}} на
-          {{datePickerService.dateRangePickerEndDate?.getDate()}}.{{datePickerService.dateRangePickerEndDate?.getMonth()! + 1}}.{{datePickerService.dateRangePickerEndDate?.getFullYear()}}
-  
+          {{datePickerService.dateRangePickerEndDate?.getDate()}}.{{datePickerService.dateRangePickerEndDate?.getMonth()!
+          + 1}}.{{datePickerService.dateRangePickerEndDate?.getFullYear()}}
         </h3>
         <div class="row" *ngIf="timePickerService.endPeriodTimeIsSelected">
           <button class="btn btn-info" (click)="onSubmit()">Провери дали е възможна промяната на периода</button>
           <button (click)="cancel()">Cancel</button>
         </div>
       </div>
-      
-      
     </div>
-
-    <!-- <button (click)="cancel()">Cancel</button> -->
-
     <hr>
   </div>
 </div>
-
-
-

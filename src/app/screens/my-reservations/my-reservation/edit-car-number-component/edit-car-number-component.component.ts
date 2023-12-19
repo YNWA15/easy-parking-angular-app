@@ -14,12 +14,11 @@ export class EditCarNumberComponentComponent {
   @Input() reservation!: Reservation;
   @Output() onUpdateNumber = new EventEmitter<string>();
   newNumber!: string;
-  constructor(private reservationService: ReservationService){}
-  close(){
-    // console.log('here')
+  constructor(private reservationService: ReservationService) { }
+  close() {
     this.element.close();
   }
-  save(){
+  save() {
     this.reservationService.changeReservationCarNumber(this.reservation.id, this.newNumber).subscribe();
     this.element.close();
     this.onUpdateNumber.emit(this.newNumber);

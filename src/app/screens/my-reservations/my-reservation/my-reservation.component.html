@@ -1,9 +1,8 @@
 <mat-card class="mat-elevation-z4 card">
     <mat-card-header>
-        <mat-card-title>reservation Id {{reservation.id}}</mat-card-title> 
+        <mat-card-title>reservation Id {{reservation.id}}</mat-card-title>
     </mat-card-header>
-    <img mat-card-image
-    src="../../../../assets/reservation.png.png" />
+    <img mat-card-image src="../../../../assets/reservation.png.png" />
     <mat-card-content>
         <p>Created on: {{reservation.createdResrvationTime! | date:"MMM dd, yyyy HH:mm"}}</p>
         <p>Paid from: {{reservation.startReservationPeriod! |date:"MMM dd, yyyy HH:mm"}}</p>
@@ -16,32 +15,23 @@
         <p>Price: {{reservation.price}}</p>
     </mat-card-content>
     <mat-card-actions>
-
         <button mat-button *ngIf="!reservation?.isStarted" (click)="showModal3(childModal1)">Change car</button>
-
-        <!-- <button mat-button *ngIf="!reservation?.isStarted && !isReservationStartsSoon()" (click)="showModal(childModal2)">Edit period</button> -->
-        <button *ngIf="reservation?.isStarted ||isReservationStartsSoon()" (click)="showModal(childModal4)" mat-button>+1hr</button>
+        <button *ngIf="reservation?.isStarted ||isReservationStartsSoon()" (click)="showModal(childModal4)"
+            mat-button>+1hr</button>
         <button mat-button *ngIf="!reservation?.isStarted" (click)="showModal2(childModal3)">Cancel</button>
     </mat-card-actions>
 </mat-card>
-
 <ng-template #childModal1>
     <app-edit-car-number-component (onUpdateNumber)="updatedCarNumber($event)" [reservation]="reservation"
         [element]="modalRef"></app-edit-car-number-component>
     <div></div>
 </ng-template>
-
-<!-- <ng-template #childModal2>
-    <app-edit-period-component [reservation]="reservation" [element]="modalRef"
-        (changedReservation)="changedReservation()"></app-edit-period-component>
-    <div></div>
-</ng-template> -->
-
 <ng-template #childModal3>
     <app-cancel-reservation (onCancelReservation)="onCancelReservation()" [reservation]="reservation"
         [element]="modalRef"></app-cancel-reservation>
     <div></div>
 </ng-template>
 <ng-template #childModal4>
-    <app-add-one-hour   (changedReservation)="changedReservation()" [reservation]="reservation" [element]="modalRef"></app-add-one-hour>
+    <app-add-one-hour (changedReservation)="changedReservation()" [reservation]="reservation"
+        [element]="modalRef"></app-add-one-hour>
 </ng-template>

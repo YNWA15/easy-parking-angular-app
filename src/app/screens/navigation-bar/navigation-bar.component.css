@@ -1,13 +1,11 @@
-.hr{
+.hr {
     border: 10cm;
-    margin-top:0.5cm;
+    margin-top: 0.5cm;
     padding: auto;
     lighting-color: aqua;
-    
-    
 }
 
 nav {
-    background-image: linear-gradient(to right,  #e4ff0099 , #8d991d99, #779abd99 , #40608099);
+    background-image: linear-gradient(to right, #e4ff0099, #8d991d99, #779abd99, #40608099);
     border-bottom: 5px solid #779abd99;
 }

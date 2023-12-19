@@ -1,28 +1,30 @@
-
-.modal{
+.modal {
     width: 100%;
     height: 100%;
 }
-.modalBodyContainter{
-    /* width: 1500px;
-    height: 1500px; */
-    margin : 50px;
+
+.modalBodyContainter {
+    margin: 50px;
     text-align: center;
-    
+
 }
-.disabled{
+
+.disabled {
     color: grey;
 }
-.newPeriodBtn{
+
+.newPeriodBtn {
     width: 100px;
 }
+
 button:disabled,
-button[disabled]{
-  border: 1px solid #999999;
-  background-color: #cccccc;
-  color: #666666;
-  cursor: not-allowed;
+button[disabled] {
+    border: 1px solid #999999;
+    background-color: #cccccc;
+    color: #666666;
+    cursor: not-allowed;
 }
-.timePickerModal{
-    width : 125px
+
+.timePickerModal {
+    width: 125px
 }

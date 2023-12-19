@@ -1,44 +1,14 @@
-<!-- <mat-card class="mat-elevation-z4" style="    min-height: 330px;
-background-color: #688aac;
-border-radius: 30px;
-user-select: none;
-border: solid #31363c 1px;
-box-shadow: inset 0 0 10px #31363c;">
-    <mat-card-header>
-      <mat-card-title>spot {{spot.id}}</mat-card-title>
-    </mat-card-header>
-    <img style="width: 60%;
-    margin: auto;" mat-card-image src="../../../../../assets/busySpot2.png" />
-    <mat-card-content>
-      <p>Reservation started at: {{currReservation?.startReservationPeriod | date:"short"}}</p>
-      <p>End at: {{currReservation?.endReservationPeriod | date:"short"}}</p>
-      <p>{{currReservation?.user?.email}}</p>
-    </mat-card-content>
-    <mat-card-actions>
-      <button mat-button (click)="endReservation()" >Освобождава се</button> 
-    </mat-card-actions>
-  </mat-card>
- -->
-
-
-
-
-
-
-
-
- <mat-card class="mat-elevation-z4 mat-card">
-    <mat-card-header>
-      <mat-card-title>spot {{spot.id}}</mat-card-title>
-    </mat-card-header>
-    <img class="img" mat-card-image src="../../../../../assets/busySpot2.png" />
-    <mat-card-content>
-      <p>Reservation started at: {{currReservation?.startReservationPeriod | date:"short"}}</p>
-      <p>End at: {{currReservation?.endReservationPeriod | date:"short"}}</p>
-      <p>{{currReservation?.user?.email}}</p>
-    </mat-card-content>
-    <mat-card-actions>
-      <button mat-button (click)="endReservation()" >Освобождава се</button> 
-    </mat-card-actions>
-  </mat-card>
-
+<mat-card class="mat-elevation-z4 mat-card">
+  <mat-card-header>
+    <mat-card-title>spot {{spot.id}}</mat-card-title>
+  </mat-card-header>
+  <img class="img" mat-card-image src="../../../../../assets/busySpot2.png" />
+  <mat-card-content>
+    <p>Reservation started at: {{currReservation?.startReservationPeriod | date:"short"}}</p>
+    <p>End at: {{currReservation?.endReservationPeriod | date:"short"}}</p>
+    <p>{{currReservation?.user?.email}}</p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button (click)="endReservation()">Освобождава се</button>
+  </mat-card-actions>
+</mat-card>

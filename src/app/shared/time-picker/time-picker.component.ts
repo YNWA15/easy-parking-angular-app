@@ -82,7 +82,7 @@ export class TimePickerComponent implements ControlValueAccessor, OnInit {
   }
 
   cancel = () => {
-      
+
     if (!this.isInReserveNowMode) {
       if (this.startReservation) {
         this.timePicker.timeForStartPeriod = null;
@@ -100,8 +100,8 @@ export class TimePickerComponent implements ControlValueAccessor, OnInit {
       this.datePickerService.datePickerDate?.setMinutes(0);;
     }
     this.hour = '12';
-      this.minute = '00';
-      this.hhmm = 'hh';
+    this.minute = '00';
+    this.hhmm = 'hh';
     this.close.emit();
   };
 
@@ -118,10 +118,6 @@ export class TimePickerComponent implements ControlValueAccessor, OnInit {
     this.onChange(this.date);
     this.onTimeChange.emit();
     this.close.emit();
-    if (!this.isInReserveNowMode) {
-      //this.modalRef?.close();
-      // this.datePickerService.
-    }
     if (!this.isInReserveNowMode) {
       if (this.startReservation) {
         this.timePicker.timeForStartPeriod = this.date;

@@ -19,36 +19,31 @@ export class ReserveNowComponent {
   public mode: PickerInteractionMode = PickerInteractionMode.DropDown;
   public format = 'hh:mm tt';
   public date: Date = new Date();
-  @Input() element!: MdbModalRef<ReserveNowComponent>;
-
-
-
-  //modalRef!: MdbModalRef<ReserveNowComponent>;
   showTimepicker = false;
   showdatePicker = true;
-
-  //dateTimeService!: any;
-
-  constructor(  //public modalRef: MdbModalRef<ReserveNowComponent>,
-    private modalDbService: MdbModalService,
-    public parkingService: ParkingServices, private dateTimeService: DateTimeService,
-    public timePickerService: TimePickerService, public datePickerService: DatePickerService, private reservationService: ReservationService
-  ) {
-    
-  }
-  onDateSelected() {
-    this.showdatePicker = !this.showdatePicker;
-  }
-  // modalRef: MdbModalRef<ReserveNowComponent> | null = null;
-  Cancel() {
-    this.element.close();
-  }
   isAvaliableForThisPeriod = false;
   isCheckedForAvaliable = false;
   avaliableSpots: ParkingSpot[] = []
   error: string | null = null;
+  carRegNumber!: string;
+
+  @Input() element!: MdbModalRef<ReserveNowComponent>;
+
+  constructor(
+    private modalDbService: MdbModalService,
+    public parkingService: ParkingServices, private dateTimeService: DateTimeService,
+    public timePickerService: TimePickerService, public datePickerService: DatePickerService, private reservationService: ReservationService
+  ) { }
+
+  onDateSelected() {
+    this.showdatePicker = !this.showdatePicker;
+  }
+
+  Cancel() {
+    this.element.close();
+  }
+
   checkAvaliable() {
-    // this.reservationService.isReserveFromNow = false;  07/11
     var toDate = new Date();
     toDate = this.datePickerService.datePickerDate!;
     toDate.setHours(this.timePickerService.singleTime?.getHours()!);
@@ -60,34 +55,14 @@ export class ReserveNowComponent {
     } else {
       this.error = null;
     }
-    //  debugger 
-
 
     this.parkingService.getAvaliableSpotsInAParkingForCustomPeriodFromNow(this.parkingService.selectedParking?.id!, toDate).subscribe(x => {
-      // debugger
       this.avaliableSpots = x;
       this.isAvaliableForThisPeriod = true;
       this.isCheckedForAvaliable = true;
-
-
-      if (this.avaliableSpots.length > 0 && this.error == null) {
-
-        //  this.modalDbService.open(PaymentConfirmationComponent, {
-        //   data: {
-        //     title: 'Modal title',
-        //     nonInvasive: true,
-        //   }
-
-        // })
-
-      }
-
       this.reservationService.carRegNumber = this.carRegNumber;
-
     })
-
   }
-  carRegNumber!: string;
 
   goToPaymant() {
     this.modalDbService.open(PaymentConfirmationComponent, {
@@ -95,20 +70,12 @@ export class ReserveNowComponent {
         title: 'Modal title',
         nonInvasive: true,
       }
-
     })
-
   }
 
   openPickerStart() {
-    //this.modalService.display
-    // this.modalRef = this.modalDbService.open(TimePickerComponent, {
-    //   modalClass: 'timePickerModal',
-    // });
     this.modalDbService.open(TimePickerComponent, {
       modalClass: 'timePickerModal',
     });
-    // this.startTimePicker = true;
-    // this.timePickerService.pickerForStartOpened = true;
   }
 }

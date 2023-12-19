@@ -12,7 +12,7 @@ export class GeolocationServices {
   denied: boolean = false;
 
   constructor() {
-    setInterval(()=> {
+    setInterval(() => {
       if (navigator.permissions.query) {
         let a = true;
         let state: string;
@@ -48,7 +48,6 @@ export class GeolocationServices {
   getLoc(): Observable<any> {
     return Observable.create((observer: any) => {
       if (navigator.geolocation) {
-        // debugger
         navigator.geolocation.getCurrentPosition(
           (position: any) => {
             this.userLat = position.coords.latitude;
@@ -67,28 +66,6 @@ export class GeolocationServices {
       }
     });
   }
-  // getLocation() {
-  //   if (navigator.geolocation) {
-  //     navigator.geolocation.getCurrentPosition(
-  //       (position: any) => {
-  //         if (position) {
-  //           this.permission = true;
-  //           this.userLat = position.coords.latitude;
-  //           this.userLon = position.coords.longitude;
-  //         } else {
-  //           this.permission = false;
-  //         }
-  //       },
-  //       (error: GeolocationPositionError) => {
-  //         if (error.message.toString().includes('denied')) {
-  //           this.denied = true;
-  //         }
-  //       }
-  //     );
-  //   } else {
-  //     alert('Geolocation is not supported by this browser.');
-  //   }
-  // }
   handlePermission(): boolean {
     let permission = false;
     if (navigator.permissions.query) {
@@ -114,7 +91,7 @@ export class GeolocationServices {
           this.userLat = position.coords.latitude;
           this.userLon = position.coords.longitude;
         },
-        () => {},
+        () => { },
         { maximumAge: 60000, timeout: 5000, enableHighAccuracy: true }
       );
       setInterval(() => {

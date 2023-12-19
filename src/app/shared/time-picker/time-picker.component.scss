@@ -3,7 +3,7 @@ $accent: #0089ff;
 
 .time-picker {
   flex: auto;
-  margin:auto;
+  margin: auto;
   display: flex;
   flex-direction: column;
   height: 350px;
@@ -19,16 +19,17 @@ $accent: #0089ff;
   input[type='radio'] {
     display: none;
 
-    &:checked + div {
+    &:checked+div {
       background: $accent;
       color: white;
     }
   }
+
   @media (pointer: coarse) {
     zoom: 125%;
   }
 
-  > header {
+  >header {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -37,7 +38,7 @@ $accent: #0089ff;
     background: $accent;
     color: white;
 
-    > .time-hhmm {
+    >.time-hhmm {
       display: flex;
       justify-content: center;
       align-items: center;
@@ -45,44 +46,43 @@ $accent: #0089ff;
       font-weight: 600;
       line-height: 66px;
 
-      > label {
+      >label {
         cursor: pointer;
 
-        > input[type='radio'] {
+        >input[type='radio'] {
           display: none;
 
-          + span {
+          +span {
             opacity: 0.6;
           }
 
-          &:checked + span {
+          &:checked+span {
             opacity: 1;
           }
         }
       }
     }
 
-    > .time-ampm {
-      padding-left: 10px;//
+    >.time-ampm {
+      padding-left: 10px; //
       display: flex;
       flex-direction: column;
       font-size: 21px;
       font-weight: 600;
       line-height: 24px;
-    //  pointer-events: none;
 
-      > label {
+      >label {
         padding: 0 10px;
         cursor: pointer;
 
-        > input[type='radio'] {
+        >input[type='radio'] {
           display: none;
 
-          + span {
+          +span {
             opacity: 0.6;
           }
 
-          &:checked + span {
+          &:checked+span {
             opacity: 1;
           }
         }
@@ -90,11 +90,11 @@ $accent: #0089ff;
     }
   }
 
-  > article {
+  >article {
     flex: 1;
     display: flex;
 
-    > .time-dial {
+    >.time-dial {
       position: relative;
       width: 200px;
       height: 200px;
@@ -117,19 +117,19 @@ $accent: #0089ff;
         background: $accent;
       }
 
-      > label {
+      >label {
         position: absolute;
 
-        > input[type='radio'] {
+        >input[type='radio'] {
           display: none;
 
-          &:checked + div {
+          &:checked+div {
             background: $accent;
             color: white;
           }
         }
 
-        > div {
+        >div {
           height: 32px;
           width: 32px;
           border-radius: 50%;
@@ -143,7 +143,7 @@ $accent: #0089ff;
         }
       }
 
-      > .hand {
+      >.hand {
         position: absolute;
         height: 69px;
         width: 3px;
@@ -155,7 +155,7 @@ $accent: #0089ff;
     }
   }
 
-  > footer {
+  >footer {
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -189,10 +189,15 @@ $accent: #0089ff;
     }
   }
 }
-.ampm{
-  border: solid #51569d 0.5px; width: 50px;
+
+.ampm {
+  border: solid #51569d 0.5px;
+  width: 50px;
 }
 
-.ampm-value{
-  position:absolute; padding-top: 46.5%; padding-left: 46.5%; text-transform: uppercase;
+.ampm-value {
+  position: absolute;
+  padding-top: 46.5%;
+  padding-left: 46.5%;
+  text-transform: uppercase;
 }

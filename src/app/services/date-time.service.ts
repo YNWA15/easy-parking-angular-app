@@ -1,6 +1,4 @@
 import { Injectable } from '@angular/core';
-// import { DateServices } from './date-services';
-// import { TimePickerService } from '../shared/time-picker.service';
 
 @Injectable({
   providedIn: 'root'
@@ -8,5 +6,5 @@ import { Injectable } from '@angular/core';
 export class DateTimeService {
   public endPeriodTime!: Date;
   public startPeriodTime!: Date;
-  constructor( ) { }
+  constructor() { }
 }

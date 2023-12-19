@@ -7,33 +7,11 @@ import { Parking, Reservation } from 'src/app/models';
   styleUrls: ['./employee-portal.component.css'],
 })
 export class EmployeePortalComponent {
-  //@Input() parking!: Parking;
   parking!: Parking;
-  //@Input() employee!: Employee;
-  //employee!: Employee;
   isBusySpotsScreen:boolean = true;
-  screen: string = 'busySpots'
-
-  spots: any[] = [
-    {
-      id: 1,
-      isFree: true,
-    },
-    {
-      id: 2,
-      isFree: false,
-    },
-    {
-      id: 3,
-      isFree: false,
-    },
-    {
-      id: 4,
-      isFree: true,
-    },
-  ];
-
-  constructor() {}
+  screen: string = 'busySpots';
   reservations!: Reservation[];
   futureReservations!: Reservation[];
+
+  constructor() {}
 }

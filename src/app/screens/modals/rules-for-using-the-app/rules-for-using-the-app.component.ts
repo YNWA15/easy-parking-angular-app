@@ -1,86 +1,27 @@
-import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { MdbModalRef } from 'mdb-angular-ui-kit/modal';
-// import { MdbModalRef, MdbModalService } from 'mdb-angular-ui-kit/modal';
-
 
 @Component({
   selector: 'app-rules-for-using-the-app',
   templateUrl: './rules-for-using-the-app.component.html',
   styleUrls: ['./rules-for-using-the-app.component.scss'],
 })
-export class RulesForUsingTheAppComponent implements OnInit, AfterViewInit{
+export class RulesForUsingTheAppComponent implements OnInit {
   constructor(
     public modalRef: MdbModalRef<RulesForUsingTheAppComponent>,
     private activeModal: NgbActiveModal
-    ){
+  ) { }
 
-  }
-  ngAfterViewInit(): void {
-    //let b = document.getElementsByClassName('modal-content')[document.getElementsByClassName('modal-content').length-1] as HTMLElement;
-      
-    //b.style.height = "90%";
-      //b.scrollTop = 0;
-  }
   ngOnInit(): void {
-    setTimeout(()=>{
-      // window.scroll(0,0);
-      // let a = document.getElementsByTagName('app-rules-for-using-the-app')[0]// as HTMLElement;
-      // a.scrollTop = 0;
-
-
-      let b = document.getElementsByClassName('modal-content')[document.getElementsByClassName('modal-content').length-1] as HTMLElement;
-      
-  //     b.innerHTML = `<div #test style="overflow-y: auto; height:100%; padding: 8%;">
-  //     <h2>ИНСТРУКЦИИ ЗА УПОТРЕБА НА ПРИЛОЖЕНИЕТО</h2>
-  // <div>
-  //     <p>Чрез приложението можете да намерите актуална информация за регистрираните в него паркинги, както и актуална иформация за налични свободни места в тях в реално време.</p>
-  //     <p>Чрез регистриране на акаунт поолучавате достъп до следните преимущества:</p>
-  //     <ul>
-  //         <li>резервиране на парко място за период до 1 месец;</li>
-  //         <li></li>
-  //     </ul>
-  //     <h3>ПРАВИЛА ЗА РЕЗЕРВАЦИЯ НА ПАРКО МЯСТО</h3>
-  //     <p>1. При резервация на парко място първо трябва да изберете период, за който искате да заемете парко място.
-  //         При налично свободно място, трябва да заплатите сумата, която ще струва престоя по обявената цена от паркинга, чрез дебитна/кредитна карта.
-  //         Ако мястото ви е освободено 90 мин. (или по-малко) преди началото на престоят ви, ще бъдете уведомен посредством приложението, че мястото ви очаква,
-  //         без да е нужно да заплащате престой за периода, преди началното време в резервацията.
-  //         Ако поради неправомерно отношение на друг/и клиенти на паркинга, мястото ви не е свободно 45 мин преди началото на резервацията ви, ще бъдете уведомен в 
-  //         профила си в приложението, че мястото ви е с проблемен статус и ако 5 минути преди началото на резервацията ви, статуса не се е променил - резервацията се
-  //         отменя, връща се заплатената от вас стойност в акунта ви, както и 10лв компенсация, за причиненото неудобство (става въпрос за извънредни ситуации, които няма как да 
-  //         предвидим).
-  //         Докато сте паркирали своя автомобил, по всяко време можете чрез приложението да увеличите времето на престоя си на обявената цена от паркинга,
-  //         при условие, че паркинга има капацитет да ви приеме и за добавеният период (т.е. има свободно място, което не е резервирано в следващият период, с който искате
-  //         да увеличите престоя си).
-  //         При момента на освобождаване, имате право на 15 минути закъснение без да имате санкции. Ако дойдете преди или точно в заплатеният период
-  //         получавате възвращаемост от 40% от платената от вас стойност за престоя. Ако закъснеете с освобождаването на парко мястото, което сте заели и 
-  //         надвишите 15-те минути изчакване, което имате, автомобилът ви се предава на градска мобилност и съответно се транспортира до някой наказателен паркинг и ще бъдете 
-  //         санкциониран по закона за неправомерно паркиране. При невъзможност от градска мобилност да окажат съдействие в момента на закъснението, колата остава на мястото си,
-  //         до когато отдел градска мобилност са на разположение и се начислява санкция на клиента от 10лв за всеки час престой, като се изземат от кредитите в профила на клиента,
-  //         ако има такива, в противен случай кредитите на акаунта се преначисляват с отрицателна стойност и за да може клиента да прави резервация в бъдеще, ще трябва да направи
-  //         депозит, с който да заплати отрицателната стойност на кредитите му.
-  //     </p>
-  //     <button (click)="close()">Close</button>
-  //     <button (click)="test.scrollTop = 0">UP</button>
-  // </div>
-  
-  // </div>
-  // `;
-
-
-
-
-
-
-
-
-  b.style.height = "90%";
+    setTimeout(() => {
+      let b = document.getElementsByClassName('modal-content')[document.getElementsByClassName('modal-content').length - 1] as HTMLElement;
+      b.style.height = "90%";
       b.scrollTop = 0;
     }, 400)
   }
-  close(){
-   //let modalRef= MdbModalRef<RulesForUsingTheAppComponent>;
-   this.modalRef.close();
-  this.activeModal.close();
+  close() {
+    this.modalRef.close();
+    this.activeModal.close();
   }
 }

@@ -33,14 +33,11 @@ export class DatePickerComponent{
     this.datePickerService.datePickerDate = null;
   }
 
-
   ngOnInit(): void {
-
     this.dateRangeForm = this.formBuilder.group({
-      start: new FormControl('', [Validators.required]), //, this.dateRangeValidator]),
+      start: new FormControl('', [Validators.required]),
       end: new FormControl('', Validators.required),
     });
-
   }
 
   myFilter = (d: Date | null): boolean => {
@@ -54,14 +51,9 @@ export class DatePickerComponent{
   };
   onFormSubmit() { }
   startDateRangeChange() {
-    // if(this.startReservation && this.startReservation < new Date()){
-    //   this.startReservation = null
-    // }
   }
   dateInput() {
-    // console.log('DateInput');
     if (this.startReservation && this.startReservation < new Date()) {
-      // console.log('here2');
       this.startReservation = null;
       this.endReservation = null;
     }

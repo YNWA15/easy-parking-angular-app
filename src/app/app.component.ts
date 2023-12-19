@@ -24,7 +24,7 @@ export class AppComponent implements OnInit {
     private authService: AuthenticationServices,
     private timePickerService: TimePickerService,
     private router: Router
-  ) {}
+  ) { }
 
   modalRef: MdbModalRef<WelcomeComponent> | null = null;
 
@@ -35,24 +35,22 @@ export class AppComponent implements OnInit {
     if (this.url.path().includes('welcome')) {
       this.isWelcomePage = true;
     }
-    //this.displayTest();
     setInterval(() => {
       this.geolocationService.try();
     }, 1000);
     let lastTimeLogged = localStorage.getItem('timeLogged');
-    if(lastTimeLogged) {
+    if (lastTimeLogged) {
       let dateLastTimeLogged = new Date(lastTimeLogged);
-      if( new Date(dateLastTimeLogged.setMinutes(dateLastTimeLogged.getMinutes() + 20)) > (new Date())){
+      if (new Date(dateLastTimeLogged.setMinutes(dateLastTimeLogged.getMinutes() + 20)) > (new Date())) {
         debugger
         this.authService.isLogged = true;
         localStorage.setItem('timeLogged', new Date().toString());
-        this.authService.getUserByEmail(localStorage.getItem('email')!).subscribe(x=>{
-         // debugger
+        this.authService.getUserByEmail(localStorage.getItem('email')!).subscribe(x => {
           this.authService.loggedUser = x;
           this.authService.userId = x.id;
-          if(localStorage.getItem('email') && localStorage.getItem('email')!.includes('admin')){
+          if (localStorage.getItem('email') && localStorage.getItem('email')!.includes('admin')) {
             this.authService.isEmployee = true;
-            let a : string = localStorage.getItem('email')!.toString();
+            let a: string = localStorage.getItem('email')!.toString();
             a.replace('admin', '').toString();
             a.replace('@test', '').toString();
             this.authService.emplyeeParkingId = +a;
@@ -64,10 +62,12 @@ export class AppComponent implements OnInit {
       }
     }
   }
+
   displayTest(): void {
     this.modalService.display(WelcomeComponent);
   }
-  endPeriodTimeSelected(){
+
+  endPeriodTimeSelected() {
     this.timePickerService.endPeriodTimeIsSelected = true;
   }
 }

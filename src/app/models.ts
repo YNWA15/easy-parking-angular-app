@@ -15,14 +15,6 @@ export class Vehicle {
   registrationNumber!: string;
 }
 
-// export class Employee extends User {
-//   parkingId!: number;
-//   parking?: Parking;
-//   employeeId!: number;
-//   dateOnSign!: Date;
-//   salaryPerHour!: number;
-//   hoursPerMonth!: number;
-// }
 export class Reservation {
   id!: number;
   startReservationPeriod!: Date;
@@ -44,6 +36,7 @@ export class Reservation {
   isFailed!: boolean;
   carRegNumber!: string;
 }
+
 export class Parking {
   id!: number;
   name!: string;
@@ -62,9 +55,8 @@ export class Parking {
   costPerWeek?: number;
   latitude!: number;
   longtitude!: number;
- // employees!: Employee[];
- // employeesCount!: number;
 }
+
 export class ParkingInfo {
   freeSpots!: number;
   freeSpotsWithoutFutureReservationsYet!: number;
@@ -75,6 +67,7 @@ export class ParkingInfo {
   avaliableSpotForNext24Hours!: number;
   avaliableSpotForNextWeek!: number;
 }
+
 export class ParkingSpot {
   id!: number;
   numberInParking!: number;
@@ -85,53 +78,5 @@ export class ParkingSpot {
   isReserved?: boolean;
   reservedFrom?: Date;
   reservedTo?: Date;
-
   reservations?: Reservation[];
 }
-// export class CreateUser {
-//   name!: string;
-//   email!: string;
-//   password!: string;
-//   phoneNumber!: string;
-// }
-// export class CreateEmployee {
-//   name!: string;
-//   email!: string;
-//   password!: string;
-//   phoneNumber!: string;
-//   parkingId!: number;
-//   employeeId!: number;
-//   salaryPerHour!: number;
-//   hoursPerMonth!: number;
-// }
-// export class CreateParking {
-//   name!: string;
-//   address!: string;
-//   parkingSpots?: CreateParkingSpots[];
-//   isSecured?: boolean;
-//   isNonStopWorking?: boolean;
-// }
-// export class CreateParkingSpots {
-//   id!: number;
-//   parkingId!: number;
-//   hasRoof?: boolean;
-//   isGarage?: boolean;
-//   costPerHour?: number;
-//   costPer4h?: number;
-//   costPer8h?: number;
-//   costPerDay?: number;
-//   costPerWeek?: number;
-// }
-// export class UpdateParking {
-//   name!: string;
-//   address!: string;
-//   parkingSpots?: CreateParkingSpots[];
-//   isAvailable!: boolean;
-//   rating!: number;
-//   isSecured!: boolean;
-//   isNonStopWorking!: boolean;
-//   openingAt!: Date;
-//   closingAt!: Date;
-//   offDay!: number;
-//   employees?: CreateEmployee[];
-// }

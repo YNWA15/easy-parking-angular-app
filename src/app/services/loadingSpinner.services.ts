@@ -8,7 +8,7 @@ export class SpinnerService {
   private count = 0;
   private spinner$ = new BehaviorSubject<string>('');
 
-  constructor() {}
+  constructor() { }
 
   getSpinnerObserver(): Observable<string> {
     return this.spinner$.asObservable();

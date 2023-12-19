@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
-import { catchError, Observable } from 'rxjs';
+import { Observable } from 'rxjs';
 import { AuthenticationServices } from 'src/app/services/authentication-services';
 import { LoginServices } from 'src/app/services/login.services';
 
@@ -22,7 +22,7 @@ export class SignUpScreenComponent {
     private router: Router,
     private http: HttpClient,
     private authService: AuthenticationServices
-  ) {}
+  ) { }
 
   create(): Observable<any> {
     return this.http.post<any>('https://localhost:44351/api/users/register', {
@@ -33,7 +33,7 @@ export class SignUpScreenComponent {
     });
   }
 
-  home(){
+  home() {
     this.router.navigate(['/welcome']);
   }
   signUp() {
@@ -59,28 +59,23 @@ export class SignUpScreenComponent {
         )
         .subscribe(
           (data) => {
-            // console.log('success', data);
             this.logInError = [];
-            // sessionStorage.setItem("token", res.access_token);
             localStorage.setItem('email', this.email.nativeElement.value);
             this.authService.isLogged = true;
-            this.authService.getUserByEmail(this.email.nativeElement.value).subscribe(x=>{
+            this.authService.getUserByEmail(this.email.nativeElement.value).subscribe(x => {
               this.authService.loggedUser = x;
               this.authService.userId = x.id;
               this.authService.regNumbers = data.vehicles;
             })
             localStorage.setItem('timeLogged', new Date().toString())
             this.router.navigate(['welcome']);
-            if(this.email.nativeElement.value.includes('admin')){
+            if (this.email.nativeElement.value.includes('admin')) {
               this.authService.isEmployee = true;
             } else {
               this.authService.isEmployee = false;
             }
           },
           (error) => {
-            // console.log('oops', error);
-            // console.log(error.error.DuplicateEmail);
-            //this.logInError += error.error.DuplicateEmail[0];
             if (error.error?.DuplicateEmail) {
               this.logInError.push(error.error.DuplicateEmail[0]);
             }
@@ -101,6 +96,5 @@ export class SignUpScreenComponent {
           }
         );
     }
-
   }
 }

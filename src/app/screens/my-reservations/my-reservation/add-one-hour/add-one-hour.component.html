@@ -4,19 +4,3 @@
     <app-paypal *ngIf="showPayment" [amaunt]="costPerHour" [isInEditMode]="true"
         (onApprove)="onCompletedPayment()"></app-paypal>
 </div>
-
-
-
-
-
-
-
-
-
-<!-- <div style="margin:5%">
-    <h3>{{message}}</h3>
-<button style="display: flex;
-margin: auto;
-justify-content: center;" class="btn" *ngIf="!showPayment" (click)="addHour()">Add 1 hour</button>
-<app-paypal *ngIf="showPayment" [amaunt]="costPerHour" [isInEditMode] = "true" (onApprove)="onCompletedPayment()"></app-paypal>
-</div> -->

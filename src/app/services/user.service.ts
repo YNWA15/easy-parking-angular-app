@@ -21,5 +21,4 @@ export class UserService {
     let url = 'https://localhost:44351/api/users/payCash/' + userId;
     return (<any>this.http.put(url, {})) as Observable<any>;
   }
-
 }
