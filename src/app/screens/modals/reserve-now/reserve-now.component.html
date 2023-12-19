@@ -1,0 +1,118 @@
+<h1 style="    text-align: center;
+margin-top: 15px; font-family: cursive;
+    font-weight: 600;     margin-bottom: 5px;
+    ">Reserve from now</h1>
+<h3 style="margin: auto;
+text-align: center;
+font-family: cursive;">Parking prices</h3>
+<table>
+    <thead>
+        <tr>
+            <th>Minimum reservation time</th>
+            <th>Price per hour</th>
+        </tr>
+    </thead>
+    <tr>
+        <td>
+            1hr
+        </td>
+        <td>
+            {{parkingService.selectedParking?.costPerHour}} лв.
+        </td>
+    </tr>
+    <tr>
+        <td>
+            4hrs
+        </td>
+        <td>
+            {{parkingService.selectedParking?.costPer4h}} лв.
+        </td>
+    </tr>
+    <tr>
+        <td>
+            8hrs
+        </td>
+        <td>
+            {{parkingService.selectedParking?.costPer8h}} лв.
+        </td>
+    </tr>
+    <tr>
+        <td>
+            24hrs
+        </td>
+        <td>
+            {{parkingService.selectedParking?.costPerDay}} лв.
+        </td>
+    </tr>
+    <tr>
+        <td>
+            a week+
+        </td>
+        <td>
+            {{parkingService.selectedParking?.costPerWeek}} лв.
+        </td>
+    </tr>
+</table>
+
+<br>
+<div>
+</div>
+<h2 style="text-align: center; font-family: cursive;">Select time for end of the reservation</h2>
+<!-- <button (click)="showdatePicker = !showdatePicker">datePicker</button> -->
+<div style="margin: auto;
+width: 248px;">
+    <app-date-picker [dateRangePicker]="false" (onEndDateRangeChangeEvent)="onDateSelected()"></app-date-picker>
+</div>
+<h2 style="text-align: center; font-family: cursive;">Select car reg number</h2>
+<!-- <button (click)="showdatePicker = !showdatePicker">datePicker</button> -->
+<div style="margin: auto;
+width: 248px;">
+    <input type="text" style="width: 100%;" [(ngModel)]="carRegNumber">
+</div>
+<!-- <button (click)="showTimepicker = !showTimepicker">timePicker</button> -->
+<div style="display:flex; ">
+    <button [disabled]="datePickerService.datePickerDate==null" type="button" class="btn btn-primary"
+        data-toggle="modal" data-target=".bd-example-modal-sm6" style=" margin:auto; margin-bottom: 5px;">час за
+        край</button>
+
+    <!-- <button class="btn" style="margin:auto;" (click)="Cancel()">Cancel</button> -->
+    <button [disabled]="datePickerService.datePickerDate == null || timePickerService.singleTime == null"
+        (click)="checkAvaliable()" class="btn"
+        style="margin:auto; display:flex; margin-top:20px; margin-bottom: 5px; width: 170px !important; justify-content: center;">Check
+        If avaliable</button>
+</div>
+
+<div>
+    <!-- <app-time-picker (close)="showTimepicker = !showTimepicker" [isInReserveNowMode]="true"></app-time-picker> -->
+</div>
+<!-- <button *ngIf="datePickerService.datePickerDate !== null && timePickerService.singleTime !== null" (click)="checkAvaliable()" class="btn" style="margin:auto; display:flex; margin-top:20px; margin-bottom: 20px;">Check If avaliable</button> -->
+
+<div *ngIf="error !== null">
+    {{error}}
+</div>
+<div *ngIf="error == null && isCheckedForAvaliable" style="font-family: cursive;
+margin-right: 10px;
+margin-left: 10px;
+text-align: center;
+font-style: italic;">
+    <div *ngIf="isAvaliableForThisPeriod && avaliableSpots.length>0">
+        <!-- <div *ngIf="true">
+            <div *ngIf="true"> -->
+        В паркинга има {{avaliableSpots!.length}} свободни парко места за избраният период.
+        <div *ngIf="avaliableSpots!.length < 3"> Побързай преди някой да ги е резервирал !</div>
+        <!-- <app-payment-confirmation></app-payment-confirmation> -->
+        <!-- <button  (click)="checkAvaliable()" class="btn" style="margin:auto; display:flex; ">Finish reservation</button> -->
+    </div>
+    <div *ngIf="!isAvaliableForThisPeriod || avaliableSpots.length==0">
+        Няма свободно място за избраният период на този паркинг.
+        Може да провериш по-късно, ако някоя от резервациите се е отменила.
+    </div>
+
+</div>
+<div style="display:flex">
+    <button [disabled]="!isAvaliableForThisPeriod || avaliableSpots.length ==0 || error !== null"
+        (click)="goToPaymant()" class="btn"
+        style="margin:auto; margin-top:5px; display:flex; justify-content: center;">Finish</button>
+    <button class="btn" style="margin:auto; display:flex; margin-top:5px; margin-bottom: 20px; justify-content: center;"
+        (click)="Cancel()">Cancel</button>
+</div>

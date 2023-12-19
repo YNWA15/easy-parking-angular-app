@@ -1,0 +1,36 @@
+.modal{
+    width: 100%;
+    height: 100%;
+}
+.modalBodyContainter{
+    /* width: 1500px;
+    height: 1500px; */
+    margin : 50px;
+    text-align: center;
+    
+}
+.disabled{
+    color: grey;
+}
+.newPeriodBtn{
+    width: 100px;
+}
+button:disabled,
+button[disabled]{
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+  cursor: not-allowed;
+}
+app-date-picker{ 
+    mat-form-field{
+    width: 100%;
+    }
+}
+.mat-form{
+    width: 100%;
+}
+.date{
+    display: inline-block;
+                width: 85%;
+}

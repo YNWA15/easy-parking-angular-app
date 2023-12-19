@@ -1,0 +1,52 @@
+<!-- <h3 style="color: #aac64e;">Въведете имейл на юзерът, чиито кредити искате да изплатите в КЕШ.</h3>
+<form class="example-form" style="    width: 100%;
+        justify-content: center; display: flex;
+">
+  <input type="text" placeholder="" [matAutocomplete]="auto" [(ngModel)]="userEmail"
+    [ngModelOptions]="{standalone: true}">
+  <mat-autocomplete #auto="matAutocomplete">
+    <mat-option *ngFor="let user of users " [value]="user.email">
+      {{user.email}}
+    </mat-option>
+  </mat-autocomplete>
+</form>
+<div style="    font-size: xx-large;
+        font-family: cursive;
+        text-align: center;
+        margin-top: 4%;" style="color: #aac64e;">{{credits}}</div>
+<div style="display: flex;
+        justify-content: center;">
+  <button style="margin-top: 50px;
+          width: 48%;
+          margin-right: 2%;" class="btn" (click)="showUserCredits()">Check credits</button>
+  <button style="margin-top: 50px;
+          width: 48%;
+          margin-left: 2%;" class="btn" (click)="cashOut()">CASH OUT</button>
+</div>
+ -->
+
+
+
+
+
+
+
+
+
+
+
+ <h3 style="color: #aac64e;">Въведете имейл на юзерът, чиито кредити искате да изплатите в КЕШ.</h3>
+<form class="example-form form">
+  <input type="text" placeholder="" [matAutocomplete]="auto" [(ngModel)]="userEmail"
+    [ngModelOptions]="{standalone: true}">
+  <mat-autocomplete #auto="matAutocomplete">
+    <mat-option *ngFor="let user of users " [value]="user.email">
+      {{user.email}}
+    </mat-option>
+  </mat-autocomplete>
+</form>
+<div class="credits" style="color: #aac64e;">{{credits}}</div>
+<div class="buttons">
+  <button class="btn" (click)="showUserCredits()">Check credits</button>
+  <button class="btn" (click)="cashOut()">CASH OUT</button>
+</div>

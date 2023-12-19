@@ -1,0 +1,11 @@
+.modalBodyContainter{
+    margin : 50px;
+    text-align: center;
+    
+}
+.modalButtons{
+    margin-top: 50px;
+}
+.modalButton{
+    width: 100px;
+}

@@ -1,0 +1,14 @@
+<div *ngIf="busyParkingSpots?.length == 0" class="info">
+    НЯМА ЗАЕТИ МЕСТА НА ПАРКИНГА !
+</div>
+
+<div class="content">
+    <div fxLayout="row wrap" fxLayoutGap="16px grid" style="width: 100%;">
+        <div fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let spot of busyParkingSpots">
+            <div class="row">
+                
+                <app-spot [spot]="spot"></app-spot>
+            </div>
+        </div>
+    </div>
+</div>

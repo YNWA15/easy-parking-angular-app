@@ -1,0 +1,39 @@
+<div
+  style="background-color: #8EADCF !important;   background-image: linear-gradient(to right, #779abd , #406080);  user-select: none;">
+  <nav class="navbar  navbar-light  navbar-expand-sm">
+    <img class="login" style="height:50px" src="../../../assets/testLogo.png" alt="">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" style="    user-select: none;" id="navbarContent">
+      <ul class="navbar-nav">
+        <li class="nav-item" *ngIf="authServices.isLogged">
+          <div style="padding:8px;     color: #0000008c;">{{authServices.loggedUser?.email}}</div>
+        </li>
+        <li class="nav-item">
+          <div *ngIf="authServices.isLogged && !authServices.isEmployee && authServices.isEmployee !== null"
+            style="padding:8px;     color: #0000008c;">Credits: {{authServices.loggedUser?.parkCredits}}</div>
+        </li>
+
+        <li class="nav-item" *ngIf=" !authServices.isEmployee && authServices.isEmployee !== null">
+          <a style="cursor:pointer; padding:8px; font-weight: 600;
+          font-size: large;" class="nav-link" (click)="toHomePage()">Home</a>
+        </li>
+
+        <li class="nav-item"
+          *ngIf=" !authServices.isEmployee && authServices.isEmployee !== null && authServices.isLogged">
+          <a style="cursor:pointer; padding:8px; font-weight: 600;
+          font-size: large;" class="nav-link" (click)="toMyReservations()">My reservations</a>
+        </li>
+
+
+        <li class="nav-item" *ngIf="authServices.isLogged">
+          <a style="cursor:pointer; padding:8px; font-weight: 600;
+          font-size: large;" class="nav-link" (click)="logOut()">LogOut</a>
+        </li>
+
+      </ul>
+    </div>
+  </nav>
+</div>

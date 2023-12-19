@@ -1,0 +1,12 @@
+<h2 clas="info-head">Future reservations: {{notStartedReservations?.length}}</h2>
+<div class="container">
+  <div class="content">
+    <div fxLayout="row wrap" fxLayoutGap="16px grid" style="width: 100%;">
+      <div fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let reservation of notStartedReservations">
+        <div class="row">
+          <app-reservation [reservation]="reservation"></app-reservation>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

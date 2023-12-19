@@ -1,0 +1,8 @@
+
+<h3>Сигурни ли сте, че искате да отмените резервацията ?</h3>
+<h3 *ngIf="returnAmaunt !== reservation.price">Ако отмените резервацията, ще загубите {{reservation.price - returnAmaunt}}. Ще ви бъдат възобновени {{returnAmaunt}} кредити.</h3>
+<h3 *ngIf="returnAmaunt == reservation.price">Ако отмените резервацията, ще ви бъде възобновена цялата цена на резервацията като кредити.</h3>
+<div class="buttons">
+    <button class="btn" (click)="cancelReservation()">cancelReservation</button>
+    <button class="btn" (click)="close()">close</button>
+</div>

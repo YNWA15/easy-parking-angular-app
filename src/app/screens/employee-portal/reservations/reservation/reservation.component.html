@@ -1,0 +1,17 @@
+<mat-card class="mat-elevation-z4 mat-card" >
+  <mat-card-header>
+    <mat-card-title>reservation Id {{reservation.id}}</mat-card-title>
+  </mat-card-header>
+  <img mat-card-image src="../../../../../assets/reservation.png.png" />
+  <mat-card-content>
+    <p class="email">{{reservation.user?.email}}</p>
+    <p>Paid from: {{reservation.startReservationPeriod| date:'short'}}</p>
+    <p>Paid till: {{reservation.endReservationPeriod | date:'short'}}</p>
+    <p>Start After: {{getDayDiff(reservation!.startReservationPeriod)}} mins</p>
+    <!-- <p *ngIf="reservation.ca">Can Start early</p>  -->
+    <p>Price: {{reservation.price}}BGN</p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button *ngIf="isActivationEnabled()" (click)="activateReservation()">Активиране</button>
+  </mat-card-actions>
+</mat-card>

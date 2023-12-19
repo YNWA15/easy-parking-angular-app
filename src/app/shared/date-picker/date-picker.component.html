@@ -1,0 +1,98 @@
+<div *ngIf="dateRangePicker">
+    <mat-form-field class="mat-form" appearance="fill">
+        <form [formGroup]="dateRangeForm" (ngSubmit)="onFormSubmit()">
+            <!-- <mat-label>{{datePickerService.dateRangePickerStartDate?.getDate()}} -
+                {{datePickerService.dateRangePickerEndDate?.getDate()}}</mat-label> -->
+            <mat-date-range-input [rangePicker]="picker" [dateFilter]="myFilter">
+                <input [(ngModel)]="datePickerService.dateRangePickerStartDate" (dateInput)="dateInput()"
+                    (dateChange)="startDateRangeChange()" formControlName="start" matStartDate placeholder="Start date">
+                <input [(ngModel)]="datePickerService.dateRangePickerEndDate" (dateChange)="endDateRangeChange()"
+                    formControlName="end" matEndDate placeholder="End date">
+            </mat-date-range-input>
+            <!-- <mat-label>{{datePickerService.dateRangePickerStartDate?.getDate()}} -
+                {{datePickerService.dateRangePickerEndDate?.getDate()}}</mat-label> -->
+            <!-- <mat-hint>MM/DD/YYYY</mat-hint> -->
+
+
+            <!-- <mat-hint>{{datePickerService.dateRangePickerStartDate | date}} -
+                {{datePickerService.dateRangePickerEndDate | date}}</mat-hint> -->
+                <span class="date">
+                    {{datePickerService.dateRangePickerStartDate | date}} -
+                {{datePickerService.dateRangePickerEndDate | date}}
+                </span>
+
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-date-range-picker #picker></mat-date-range-picker>
+
+
+
+        </form>
+    </mat-form-field>
+</div>
+
+<!-- <div class="modal fade bd-example-modal-sm1" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <button id="closeModalButton" [hidden]="false" data-toggle="modal" data-target="#myModal"
+                class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+    </div>
+</div> -->
+
+<div *ngIf="!dateRangePicker">
+    <mat-form-field>
+        <input matInput [(ngModel)]="datePickerService.datePickerDate" (dateChange)="datePickerChange()"
+            [matDatepickerFilter]="myFilter" [matDatepicker]="picker">
+        <mat-datepicker-toggle matSuffix [for]="picker" [dateFilter]="myFilter"></mat-datepicker-toggle>
+        <mat-datepicker #picker [dateFilter]="myFilter"></mat-datepicker>
+    </mat-form-field>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+<div *ngIf="dateRangePicker">
+    <mat-form-field style="width: 100%;" appearance="fill">
+        <form [formGroup]="dateRangeForm" (ngSubmit)="onFormSubmit()">
+
+            <mat-date-range-input [rangePicker]="picker" [dateFilter]="myFilter">
+                <input [(ngModel)]="datePickerService.dateRangePickerStartDate" (dateInput)="dateInput()"
+                    (dateChange)="startDateRangeChange()" formControlName="start" matStartDate placeholder="Start date">
+                <input [(ngModel)]="datePickerService.dateRangePickerEndDate" (dateChange)="endDateRangeChange()"
+                    formControlName="end" matEndDate placeholder="End date">
+            </mat-date-range-input>
+
+                <span style="display: inline-block;
+                width: 85%;">
+                    {{datePickerService.dateRangePickerStartDate | date}} -
+                {{datePickerService.dateRangePickerEndDate | date}}
+                </span>
+
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-date-range-picker #picker></mat-date-range-picker>
+
+
+
+        </form>
+    </mat-form-field>
+</div>
+
+
+
+<div *ngIf="!dateRangePicker">
+    <mat-form-field>
+        <input matInput [(ngModel)]="datePickerService.datePickerDate" (dateChange)="datePickerChange()"
+            [matDatepickerFilter]="myFilter" [matDatepicker]="picker">
+        <mat-datepicker-toggle matSuffix [for]="picker" [dateFilter]="myFilter"></mat-datepicker-toggle>
+        <mat-datepicker #picker [dateFilter]="myFilter"></mat-datepicker>
+    </mat-form-field>
+</div> -->

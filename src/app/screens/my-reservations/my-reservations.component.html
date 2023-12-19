@@ -1,0 +1,11 @@
+<div class="container">
+    <div class="content">
+        <div fxLayout="row wrap" fxLayoutGap="16px grid">
+          <div fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let reservation of activeReservations">
+            <div class="row">
+              <app-my-reservation (onCancelAReservation)="refreshReservations()" [reservation]="reservation"></app-my-reservation>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>

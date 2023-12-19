@@ -1,0 +1,57 @@
+.container{
+    
+    /* align-items: center;
+    justify-content: center;
+    text-align: center;
+    border: solid green 8px */
+}
+
+/* @media (max-height: 600px) {
+    .component-div{
+        overflow-y: auto;
+        height: 60%;
+    }
+} */
+
+
+@media (max-height: 450px) {
+    .component-div{
+        /* overflow-y: auto; */
+        height: 80% !important
+    }
+}
+@media (max-height: 800px) {
+    .component-div{
+        /* overflow-y: auto; */
+        height: 90% !important
+    }
+}
+
+
+.component-div{
+    /* overflow-y: auto; */
+    height: 100% 
+}
+
+/* app-spot{
+    scale: 0.8 !important;
+} */
+
+app-spot{
+    padding: 0;
+}
+.tab-btn{
+    width: 100px;
+    border: solid black 3px;
+    text-align: center;
+    border-radius: 3px;
+}
+
+.headText{
+    font-family: cursive;
+  font-size: xx-large;
+  margin-top: 4%; color: #aac64e; margin-top: 20px !important;
+} 
+.tabs {
+    justify-content: center; border-bottom: 1px solid #748f7a; justify-content: space-around;
+}

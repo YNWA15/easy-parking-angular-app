@@ -1,0 +1,19 @@
+
+agm-map {
+    height: 300px;
+  }
+
+.container{
+    position: absolute;
+    width: 60%;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+.parking {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    border-color: black;
+    margin-top: 1%
+}
+

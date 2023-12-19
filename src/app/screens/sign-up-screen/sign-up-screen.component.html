@@ -1,0 +1,72 @@
+<!-- <hr class="divider">
+<img class="icb-logo " src="/assets/images/icb-logo-large.png" alt="">
+<hr class="divider "> -->
+<div class="container ">
+
+    <div class="container1 ">
+        <div style="display: flex;
+        justify-content: center;">
+            <img class="login " src="../../../assets/signup.png" alt="">
+        </div>
+
+        <div *ngIf="logInError.length > 0">
+            <!-- <p *ngFor="let err of logInError"  style="margin-bottom: -15px;" id="logInError" class=" logInError " >
+                <i class="fa fa-info-circle " aria-hidden="true "></i> {{logInError[0]}}
+            </p> -->
+            <p style="margin-bottom: -15px;" id="logInError" class=" logInError " >
+                <i class="fa fa-info-circle " aria-hidden="true "></i> {{logInError[0]}}
+            </p>
+        </div>
+        
+        <form class="form ">
+            <div class="log-cred ">
+                <div class="row ">
+                    <div class="col-md-4 "></div>
+                    <div class="textSpace col-md-4 ">
+                        <div class="form-outline mb-4 ">
+                            <input type="text " id="name" class="form-control " placeholder="Name" style="margin-top: 12%;" #name />
+                        </div>
+                    </div>
+                    <div class=" col-md-4 "></div>
+                </div>
+                <div class="row ">
+                    <div class="col-md-4 "></div>
+                    <div class="textSpace col-md-4 ">
+                        <div class="form-outline mb-4 ">
+                            <input type="phoneNumber" id="phoneNumber" class="form-control" placeholder="PhoneNumber" #phoneNumber />
+                        </div>
+                    </div>
+                    <div class="col-md-4 "></div>
+                </div>
+                <div class="row ">
+                    <div class="col-md-4 "></div>
+                    <div class="textSpace col-md-4 ">
+                        <div class="form-outline mb-4 ">
+                            <input type="text " id="username " class="form-control " placeholder="Email" style="margin-top: 4%;" #email />
+                        </div>
+                    </div>
+                    <div class=" col-md-4 "></div>
+                </div>
+                <div class="row ">
+                    <div class="col-md-4 "></div>
+                    <div class="textSpace col-md-4 ">
+                        <div class="form-outline mb-4 ">
+                            <input type="password" class="form-control" placeholder="Password" #password />
+                        </div>
+                    </div>
+                    <div class="col-md-4 "></div>
+                </div>
+                <div class="row ">
+                    <div class="col-md-4 "></div>
+                    <div class="textSpace col-md-4 " style="padding-top: 1% ; display: flex; flex-direction: row;">
+                        <button  (click)="signUp()" type="submit " style="margin-right: 4%; width: 48% !important;" class="btn btn-primary btn-block mb-4 col-md-12 ">SignUp
+                        </button>
+                        <button  (click)="home()" type="submit " style="margin-top: 0; width: 48% !important;" class="btn btn-primary btn-block mb-4 col-md-12 ">Home
+                        </button>
+                    </div>
+                    <div class=" col-md-4 "></div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

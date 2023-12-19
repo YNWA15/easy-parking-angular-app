@@ -1,0 +1,13 @@
+.mat-card {
+    min-height: 432px;
+    background-color: #688aac;
+    border-radius: 30px;
+    user-select: none;
+    border: solid #31363c 1px;
+    box-shadow: inset 0 0 10px #31363c;
+}
+.email {
+    display: flex;
+    justify-content: center;
+    font-weight: 600;
+}

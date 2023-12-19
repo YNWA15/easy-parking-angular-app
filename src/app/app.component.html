@@ -1,0 +1,47 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+
+
+<!-- <div style="background-color: #c5e0ff;"> -->
+  <!-- <div style="   background-color: #31363b; height: 100%;"> -->
+    <div style="  background-image: linear-gradient(to right, #406080 , #31363b ); height: 100%; display: flex;
+    flex-direction: column;">
+
+   
+   <app-navigation-bar ></app-navigation-bar>
+    <router-outlet ></router-outlet>
+</div>
+
+
+
+
+
+
+
+
+
+
+<div>
+    <div class="modal fade bd-example-modal-sm16" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <app-time-picker [isInReserveNowMode]="false" [startReservation]="true"  ></app-time-picker>
+        <!-- <button id="closeModalButton" [hidden]="false" data-toggle="modal" data-target="#myModal"
+          class="btn btn-default" data-dismiss="modal">Close</button> -->
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="modal fade bd-example-modal-sm17" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <app-time-picker [isInReserveNowMode]="false" [startReservation]="false" (onEndPeriodTimeSelected)="endPeriodTimeSelected()"></app-time-picker>
+        <!-- <button id="closeModalButton" [hidden]="false" data-toggle="modal" data-target="#myModal"
+          class="btn btn-default" data-dismiss="modal">Close</button> -->
+      </div>
+    </div>
+  </div>

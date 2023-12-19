@@ -1,0 +1,327 @@
+.welcomeMenu {
+  margin: auto;
+}
+
+.btn {
+  width: 150px !important;
+  background-color: #E4FF00;
+  border-color: #E4FF00;
+  color: black;
+  font-style: italic;
+  font-family: cursive;
+  font-weight: 600;
+
+  background-image: linear-gradient(to right, #abc005, #E4FF00);
+  border: none;
+}
+
+.try {
+  box-sizing: border-box;
+  width: 32px;
+  height: 24px;
+  background: #373C41;
+  border: 1px solid #71767A;
+  border-radius: 4px;
+  flex: none;
+  order: 1;
+}
+
+.welcome-svg {
+  user-select: none;
+  width: 90%;
+}
+
+.btn-group-lg {
+  /* align-items: center;
+  text-align: center;
+  background-position-x: center; */
+  display: block;
+  margin: auto;
+}
+
+.welcome {
+  border: 1px;
+  margin-top: 10px;
+  color: blue;
+  text-align: center;
+  color: #e4ff00;
+  text-shadow: 1px 5px 2px #406080, 10px 10px 24px #406080, 1px 2px 5px #406080;
+  user-select: none;
+  font-size: xx-large;
+  margin: auto;
+  font-family: cursive;
+
+}
+
+.welcomeMenu {
+  margin-top: 16px;
+  margin-bottom: 16px;
+  /* padding-top: 2% */
+}
+
+.div2 {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  position: relative;
+  animation-name: example;
+  animation-duration: 4s;
+}
+
+@keyframes example {
+  0% {
+    background-color: red;
+    left: 0px;
+    top: 0px;
+  }
+
+  25% {
+    background-color: yellow;
+    left: 200px;
+    top: 0px;
+  }
+
+  50% {
+    background-color: blue;
+    left: 200px;
+    top: 200px;
+  }
+
+  75% {
+    background-color: green;
+    left: 0px;
+    top: 200px;
+  }
+
+  100% {
+    background-color: red;
+    left: 0px;
+    top: 0px;
+  }
+}
+
+.choiceFast {
+  margin-left: 120px;
+  text-align: center;
+  position: absolute;
+  margin-top: 140px;
+
+}
+
+.choiceReservation {
+  margin-left: 120px;
+  text-align: center;
+  position: absolute;
+  margin-top: 280px;
+}
+
+.choice {
+  border: 1px;
+  margin: auto;
+  padding-left: 0;
+  text-align: center;
+
+  color: blue;
+  background-color: green;
+  width: max-content;
+  height: inherit;
+  cursor: pointer;
+
+  padding-bottom: 1cm;
+  opacity: 1;
+
+}
+
+.choiceImg {
+  margin: auto;
+  background: transparent;
+  position: absolute;
+  width: 600px;
+
+  opacity: 0.94;
+  filter: drop-shadow(8px 8px 10px green);
+
+}
+
+img:hover {
+  transform: scaleX(-1);
+}
+
+.mask1 {
+  /* -webkit-mask-image: url(w3logo.png);
+    mask-image: url(w3logo.png); */
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+}
+
+.imgChoice {
+  width: 600px;
+}
+
+
+.btn:hover {
+  background-color: #406080;
+  border-color: #406080;
+
+  background-image: linear-gradient(to right, #779abd, #406080);
+}
+
+.welcome {
+  font-size: xx-large;
+  font-family: cursive;
+}
+
+
+
+.animate-charcter {
+  text-transform: uppercase;
+  background-image: linear-gradient(-225deg,
+      #231557 0%,
+      #44107a 29%,
+      #ff1361 67%,
+      #fff800 100%);
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 2s linear infinite;
+  display: inline-block;
+  font-size: 190px;
+}
+
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
+}
+
+
+
+
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+
+html,
+body {
+  height: 100%;
+  font-weight: 800;
+}
+
+body {
+  background: yellow;
+  font-family: Arial;
+}
+
+svg {
+  display: block;
+  font: 9em 'Montserrat';
+  width: 960px;
+  height: 150px;
+  margin: 0 auto;
+}
+
+.text-copy {
+  fill: none;
+  stroke: white;
+  stroke-dasharray: 6% 29%;
+  stroke-width: 5px;
+  stroke-dashoffset: 0%;
+  animation: stroke-offset 5.5s infinite linear;
+}
+
+.text-copy:nth-child(1) {
+  stroke: #406080;
+  animation-delay: -1s;
+}
+
+.text-copy:nth-child(2) {
+  stroke: #406080;
+  animation-delay: -2;
+}
+
+.text-copy:nth-child(3) {
+  stroke: #8d991d;
+  animation-delay: -3s;
+}
+
+.text-copy:nth-child(4) {
+  stroke: #E4FF00;
+  animation-delay: -4s;
+}
+
+.text-copy:nth-child(5) {
+  stroke: #31363B;
+  animation-delay: -5s;
+}
+
+
+@keyframes stroke-offset {
+  100% {
+    stroke-dashoffset: -35%;
+  }
+}
+
+
+
+@import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.test {
+  font-family: "Montserrat Medium";
+  max-width: 40ch;
+  text-align: center;
+  transform: scale(0.94);
+  animation: scale 3s forwards cubic-bezier(0.5, 1, 0.89, 1);
+}
+
+@keyframes scale {
+  100% {
+    transform: scale(1);
+  }
+}
+
+span {
+  /* display: inline-block; */
+  opacity: 0;
+  filter: blur(4px);
+}
+
+span:nth-child(1) {
+  animation: fade-in 1.2s 0.1s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+span:nth-child(2) {
+  animation: fade-in 1.2s 0.2s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+span:nth-child(3) {
+  animation: fade-in 1.2s 0.3s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+span:nth-child(4) {
+  animation: fade-in 1.2s 0.4s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+@keyframes fade-in {
+  100% {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+
+.rules {
+  cursor: pointer;
+  display: flex;
+  margin-top: 5%;
+  justify-content: center;
+  text-decoration: underline;
+  color: #7a905d;
+}
