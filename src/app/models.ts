@@ -54,7 +54,7 @@ export class Parking {
   costPerDay?: number;
   costPerWeek?: number;
   latitude!: number;
-  longtitude!: number;
+  longitude!: number;
 }
 
 export class ParkingInfo {

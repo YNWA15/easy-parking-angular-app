@@ -1,4 +1,4 @@
-<h3 style="color: #aac64e;">Въведете имейл на юзерът, чиито кредити искате да изплатите в КЕШ.</h3>
+<h3 style="color: #aac64e;">Въведете имейл на клиентът, чиито кредити искате да изплатите в лв.</h3>
 <form class="example-form form">
   <input type="text" placeholder="" [matAutocomplete]="auto" [(ngModel)]="userEmail"
     [ngModelOptions]="{standalone: true}">
@@ -10,6 +10,6 @@
 </form>
 <div class="credits" style="color: #aac64e;">{{credits}}</div>
 <div class="buttons">
-  <button class="btn" (click)="showUserCredits()">Check credits</button>
-  <button class="btn" (click)="cashOut()">CASH OUT</button>
+  <button class="btn" (click)="showUserCredits()">Провери кредити</button>
+  <button class="btn" (click)="cashOut()">Изплати</button>
 </div>

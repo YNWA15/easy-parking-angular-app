@@ -57,8 +57,6 @@ export class ParkingComponent implements OnInit {
     this.modalRef2.close();
   }
   ngOnInit(): void {
-    //debugger
-    // console.log(this.parking);
     if (!this.reservationService.selectedPeriod) {
       this.parkingService.getParkingInfo(this.parking.id).subscribe((x) => {
         this.parkingInfo = x;
@@ -95,6 +93,7 @@ export class ParkingComponent implements OnInit {
 
   }
   viewOnMap() {
+    this.parkingService.selectedParking = this.parking;
     let modalRef = this.modalDbService.open(ParkingOnMapComponent);
   }
   isVisibleInformation(info: string): boolean {

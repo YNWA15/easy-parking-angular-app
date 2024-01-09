@@ -41,11 +41,13 @@ export class LoginScreenComponent implements OnInit {
             this.authenticationService.regNumbers = data.vehicles;
           })
           localStorage.setItem('timeLogged', new Date().toString())
+          debugger
             if(this.email.nativeElement.value.includes('admin')){
               this.authenticationService.isEmployee = true;
               let a : string = this.email.nativeElement.value.toString();
-              a.replace('admin', '').toString();
-              a.replace('@test', '').toString();
+              a = a.replace('admin', '').toString();
+              // a = a.replace('@test', '').toString();
+              a = a.replace('@abv.bg', '').toString();
               this.authenticationService.emplyeeParkingId = +a;
               this.router.navigate(['portal']);
             } else {

@@ -22,19 +22,22 @@
                     </div>
                     <div class="col-md-4 "></div>
                 </div>
-                <h3 *ngIf="unathorized">Your credetionals are wrong !</h3>
-                <div class="row ">
+                <h3 *ngIf="unathorized">Грешни потребителско име и/или парола!</h3>
+                <button (click)="logIn()" type="submit " style="margin: auto; width: 48% !important;"
+                            class="btn btn-primary btn-block mb-4 col-md-12 ">Влез
+                        </button>
+                <!-- <div class="row ">
                     <div class="col-md-4 "></div>
                     <div class="textSpace col-md-4 " style="padding-top: 1% ; display: flex; flex-direction: row;">
                         <button (click)="logIn()" type="submit " style="margin-right: 4%; width: 48% !important;"
-                            class="btn btn-primary btn-block mb-4 col-md-12 ">Login
+                            class="btn btn-primary btn-block mb-4 col-md-12 ">Влез
                         </button>
                         <button (click)="home()" type="submit " style="margin-top: 0; width: 48% !important;"
-                            class="btn btn-primary btn-block mb-4 col-md-12 ">Home
-                        </button>
+                            class="btn btn-primary btn-block mb-4 col-md-12 ">Начало
+                        </button> 
                     </div>
                     <div class=" col-md-4 "></div>
-                </div>
+                </div> -->
             </div>
         </form>
     </div>

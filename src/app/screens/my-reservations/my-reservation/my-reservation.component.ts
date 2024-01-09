@@ -13,13 +13,14 @@ export class MyReservationComponent implements OnInit {
   @Input() reservation !: Reservation;
   @Output() onCancelAReservation = new EventEmitter();
   parking!: Parking;
-  constructor(private parkingService: ParkingServices, private modalDbService: MdbModalService, private reservationService: ReservationService) {
+  modalRef!: MdbModalRef<any>
 
-  }
+  constructor(private parkingService: ParkingServices, private modalDbService: MdbModalService, private reservationService: ReservationService) {}
+
   ngOnInit(): void {
     this.parkingService.getParkingById(this.reservation.parkingId).subscribe(x => this.parking = x)
   }
-  modalRef!: MdbModalRef<any>
+
   showModal(modal: TemplateRef<any>) {
     this.modalRef = this.modalDbService.open(modal);
   }
@@ -42,10 +43,11 @@ export class MyReservationComponent implements OnInit {
     this.reservation.carRegNumber = carNumber;
   }
   isReservationStartsSoon() {
-    if (new Date(this.reservation.startReservationPeriod) >= new Date(new Date().setHours(new Date().getHours() - 2))) {
-      return false;
-    } else {
+    debugger
+    if (new Date(this.reservation.startReservationPeriod) >= new Date(new Date().setHours(new Date().getHours() - 2)) || new Date(this.reservation.startReservationPeriod) <= new Date()) {
       return true;
+    } else {
+      return false;
     }
   }
   changedReservation() {

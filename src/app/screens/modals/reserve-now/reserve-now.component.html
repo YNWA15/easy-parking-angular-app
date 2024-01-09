@@ -1,20 +1,20 @@
 <h1 style="    text-align: center;
 margin-top: 15px; font-family: cursive;
     font-weight: 600;     margin-bottom: 5px;
-    ">Reserve from now</h1>
+    ">Резервирай място сега</h1>
 <h3 style="margin: auto;
 text-align: center;
-font-family: cursive;">Parking prices</h3>
+font-family: cursive;">Ценоразпис</h3>
 <table>
     <thead>
         <tr>
-            <th>Minimum reservation time</th>
-            <th>Price per hour</th>
+            <th>Минимално време на престоя</th>
+            <th>Цена за час</th>
         </tr>
     </thead>
     <tr>
         <td>
-            1hr
+            1ч.
         </td>
         <td>
             {{parkingService.selectedParking?.costPerHour}} лв.
@@ -22,7 +22,7 @@ font-family: cursive;">Parking prices</h3>
     </tr>
     <tr>
         <td>
-            4hrs
+            4ч.
         </td>
         <td>
             {{parkingService.selectedParking?.costPer4h}} лв.
@@ -30,7 +30,7 @@ font-family: cursive;">Parking prices</h3>
     </tr>
     <tr>
         <td>
-            8hrs
+            8ч.
         </td>
         <td>
             {{parkingService.selectedParking?.costPer8h}} лв.
@@ -38,7 +38,7 @@ font-family: cursive;">Parking prices</h3>
     </tr>
     <tr>
         <td>
-            24hrs
+            24ч.
         </td>
         <td>
             {{parkingService.selectedParking?.costPerDay}} лв.
@@ -46,7 +46,7 @@ font-family: cursive;">Parking prices</h3>
     </tr>
     <tr>
         <td>
-            a week+
+            повече от седмица
         </td>
         <td>
             {{parkingService.selectedParking?.costPerWeek}} лв.
@@ -56,12 +56,12 @@ font-family: cursive;">Parking prices</h3>
 <br>
 <div>
 </div>
-<h2 style="text-align: center; font-family: cursive;">Select time for end of the reservation</h2>
+<h2 style="text-align: center; font-family: cursive;">Избери време за освобождаване</h2>
 <div style="margin: auto;
 width: 248px;">
     <app-date-picker [dateRangePicker]="false" (onEndDateRangeChangeEvent)="onDateSelected()"></app-date-picker>
 </div>
-<h2 style="text-align: center; font-family: cursive;">Select car reg number</h2>
+<h2 style="text-align: center; font-family: cursive;">Въведи регистрационният номер на автомобила>
 <div style="margin: auto;
 width: 248px;">
     <input type="text" style="width: 100%;" [(ngModel)]="carRegNumber">
@@ -72,8 +72,7 @@ width: 248px;">
         край</button>
     <button [disabled]="datePickerService.datePickerDate == null || timePickerService.singleTime == null"
         (click)="checkAvaliable()" class="btn"
-        style="margin:auto; display:flex; margin-top:20px; margin-bottom: 5px; width: 170px !important; justify-content: center;">Check
-        If avaliable</button>
+        style="margin:auto; display:flex; margin-top:20px; margin-bottom: 5px; width: 170px !important; justify-content: center;">Провери</button>
 </div>
 <div>
 </div>
@@ -97,7 +96,7 @@ font-style: italic;">
 <div style="display:flex">
     <button [disabled]="!isAvaliableForThisPeriod || avaliableSpots.length ==0 || error !== null"
         (click)="goToPaymant()" class="btn"
-        style="margin:auto; margin-top:5px; display:flex; justify-content: center;">Finish</button>
+        style="margin:auto; margin-top:5px; display:flex; justify-content: center;">Завърши</button>
     <button class="btn" style="margin:auto; display:flex; margin-top:5px; margin-bottom: 20px; justify-content: center;"
-        (click)="Cancel()">Cancel</button>
+        (click)="Cancel()">Откажи</button>
 </div>

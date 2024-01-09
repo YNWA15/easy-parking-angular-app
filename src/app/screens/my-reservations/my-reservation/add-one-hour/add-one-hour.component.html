@@ -1,6 +1,6 @@
 <div style="margin:5%">
     <h3>{{message}}</h3>
-    <button class="btn" *ngIf="!showPayment" (click)="addHour()">Add 1 hour</button>
+    <button class="btn" *ngIf="!showPayment" (click)="addHour()">Добави 1 час</button>
     <app-paypal *ngIf="showPayment" [amaunt]="costPerHour" [isInEditMode]="true"
         (onApprove)="onCompletedPayment()"></app-paypal>
 </div>

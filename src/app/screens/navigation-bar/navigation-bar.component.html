@@ -13,24 +13,23 @@
         </li>
         <li class="nav-item">
           <div *ngIf="authServices.isLogged && !authServices.isEmployee && authServices.isEmployee !== null"
-            style="padding:8px;     color: #0000008c;">Credits: {{authServices.loggedUser?.parkCredits}}</div>
+            style="padding:8px;     color: #0000008c;">Кредити: {{authServices.loggedUser?.parkCredits}}</div>
         </li>
 
-        <li class="nav-item" *ngIf=" !authServices.isEmployee && authServices.isEmployee !== null">
+        <li class="nav-item" *ngIf=" !authServices.isEmployee && authServices.isEmployee !== null || !authServices.isLogged">
           <a style="cursor:pointer; padding:8px; font-weight: 600;
-          font-size: large;" class="nav-link" (click)="toHomePage()">Home</a>
+          font-size: large;" class="nav-link" (click)="toHomePage()">Начало</a>
         </li>
 
         <li class="nav-item"
           *ngIf=" !authServices.isEmployee && authServices.isEmployee !== null && authServices.isLogged">
           <a style="cursor:pointer; padding:8px; font-weight: 600;
-          font-size: large;" class="nav-link" (click)="toMyReservations()">My reservations</a>
+          font-size: large;" class="nav-link" (click)="toMyReservations()">Моите резервации</a>
         </li>
-
 
         <li class="nav-item" *ngIf="authServices.isLogged">
           <a style="cursor:pointer; padding:8px; font-weight: 600;
-          font-size: large;" class="nav-link" (click)="logOut()">LogOut</a>
+          font-size: large;" class="nav-link" (click)="logOut()">Излез</a>
         </li>
 
       </ul>

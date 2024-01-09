@@ -11,7 +11,7 @@
         (click)="timePickerService.timeForStartPeriod = null" type="button" class="btn btn-primary" data-toggle="modal"
         data-target=".bd-example-modal-sm16">час за начало</button>
       <button style="width: 48%; background-color: #55595d82;  margin: auto;" *ngIf="showTimePickerForEnd" type="button"
-        class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-sm17">час за krai</button>
+        class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-sm17">час за kraй</button>
     </div>
     <div
       *ngIf="datePickerService.dateRangePickerStartDate !== null && datePickerService.dateRangePickerEndDate !== null  && timePickerService.timeForStartPeriod !== null && timePickerService.timeForEndPeriod !== null && errorPeriod()">
@@ -43,7 +43,7 @@
       <div style="    display: flex;">
         <button [disabled]="registrationNumberForTheReservation == null || registrationNumberForTheReservation == ''"
           class="btn btn-info" style="margin:auto" (click)="onSubmit()">Провери за свободни места</button>
-        <button class="btn" style="margin:auto" (click)="cancel()">Cancel</button>
+        <button class="btn" style="margin:auto" (click)="cancel()">Откажи</button>
       </div>
 
       <div *ngIf="isInEditMode">
@@ -56,7 +56,7 @@
         </h3>
         <div class="row" *ngIf="timePickerService.endPeriodTimeIsSelected">
           <button class="btn btn-info" (click)="onSubmit()">Провери дали е възможна промяната на периода</button>
-          <button (click)="cancel()">Cancel</button>
+          <button (click)="cancel()">Откажи</button>
         </div>
       </div>
     </div>

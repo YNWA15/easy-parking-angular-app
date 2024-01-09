@@ -23,21 +23,21 @@
 <div class="no-select">
   <div class=" welcomeMenu align-middle" style="    padding-top: 2%">
     <div class="row welcomeMenu"><button (click)="openRequestPositionModal()" type="button"
-        class="btn btn-info btn-group btn-group-lg  text-center align-middle">Search for parking</button></div>
+        class="btn btn-info btn-group btn-group-lg  text-center align-middle">Търся паркинг</button></div>
 
     <div class="row welcomeMenu" *ngIf="authServices.isLogged"><button (click)="showModal2(childModal2)" type="button"
         data-bs-toggle="modal" data-bs-target="modal"
-        class="btn btn-info btn-group btn-group-lg  text-center align-middle">Reserve for ...</button></div>
+        class="btn btn-info btn-group btn-group-lg  text-center align-middle">Резервирай за...</button></div>
 
     <ng-template #childModal2>
       <app-period-picker [element]="modalRef!"></app-period-picker>
     </ng-template>
 
-
     <div class="row welcomeMenu" *ngIf="!authServices.isLogged"><button (click)="onLogin()" type="button"
-        class="btn btn-info btn-group btn-group-lg  text-center align-middle">Login</button></div>
+        class="btn btn-info btn-group btn-group-lg  text-center align-middle">Влез</button></div>
     <div class="row welcomeMenu" *ngIf="!authServices.isLogged"><button (click)="signUp()" type="button"
-        class="btn btn-info btn-group btn-group-lg  text-center align-middle">SignUp</button></div>
+        class="btn btn-info btn-group btn-group-lg  text-center align-middle">Регист<span
+          style="    padding-left: 5px;">рирай</span></button></div>
   </div>
 
   <a class="rules" (click)="openRules()">Правила за ползване</a>

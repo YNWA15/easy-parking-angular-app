@@ -1,24 +1,24 @@
 <ul class="nav nav-tabs tabs">
   <li><button id="btnBusy" class="btn tab-btn" (click)="screen='busySpots'">Заети места</button></li>
   <li><button class="btn tab-btn" (click)="screen='reservations'">Резервации</button></li>
-  <li><button class="btn tab-btn" (click)="screen='users'">User</button></li>
+  <li><button class="btn tab-btn" (click)="screen='users'">Клиенти</button></li>
 </ul>
 
 <div *ngIf="screen=='busySpots'" class="component-div">
 
-  <h3 class="headText" style="display: flex;
+  <h3 class="headText no-select" style="display: flex;
   justify-content: center;">Заети места</h3>
   <app-busy-spots></app-busy-spots>
 </div>
 
 <div *ngIf="screen=='reservations'" class="component-div">
 
-  <h3 class="headText" style="display: flex;
+  <h3 class="headText no-select" style="display: flex;
   justify-content: center;">Резервации</h3>
   <app-reservations></app-reservations>
 </div>
 
-<div *ngIf="screen=='users'" class="component-div" style=" align-items: center; display: flex; flex-direction: column;">
-  <h3 class="headText">Users</h3>
+<div *ngIf="screen=='users'" class="component-div no-select" style=" align-items: center; display: flex; flex-direction: column;">
+  <h3 class="headText">Клиенти</h3>
   <app-users></app-users>
 </div>

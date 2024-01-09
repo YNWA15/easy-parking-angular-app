@@ -57,6 +57,7 @@ export class ReserveNowComponent {
     }
 
     this.parkingService.getAvaliableSpotsInAParkingForCustomPeriodFromNow(this.parkingService.selectedParking?.id!, toDate).subscribe(x => {
+      debugger
       this.avaliableSpots = x;
       this.isAvaliableForThisPeriod = true;
       this.isCheckedForAvaliable = true;

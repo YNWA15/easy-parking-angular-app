@@ -1,6 +1,8 @@
 <div class="edit-car-number">
-    <h3>Redit carRegNumber for the reservation:</h3>
+    <h3>Промени регистрационният номер на автомобила:</h3>
     <input type="text" [(ngModel)]="newNumber" [placeholder]="reservation.carRegNumber">
-    <button *ngIf="newNumber" (click)="save()">save</button>
-    <button class="btn" (click)="close()">close</button>
+    <div style="display: flex; flex-direction: row;">
+        <button *ngIf="newNumber" class="btn" style="margin:auto" (click)="save()">Запази</button>
+        <button class="btn" style="margin:auto" (click)="close()">Затвори</button>
+    </div>
 </div>

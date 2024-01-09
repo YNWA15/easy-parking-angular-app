@@ -6,36 +6,33 @@
   <mat-card-content style="min-height: 116px; font-style:italic;">
     <p>{{parking.address}}</p>
     <div *ngIf="isPeriodSelected ==false">
-      <p>{{parkingInfo?.freeSpots ?? 0}} Free spots</p>
+      <p>{{parkingInfo?.freeSpots ?? 0}} свободни места</p>
       <p *ngIf="isVisibleInformation('freeSpotsWithoutFutureReservationsYet')">
-        {{parkingInfo?.freeSpotsWithoutFutureReservationsYet!}} Spots without future reservations</p>
+        {{parkingInfo?.freeSpotsWithoutFutureReservationsYet!}} места без резервации</p>
 
       <p *ngIf="isVisibleInformation('avaliableSpotForNext24Hours')">
-        {{parkingInfo!.avaliableSpotForNext24Hours}} Free spots for next 24 hours</p>
+        {{parkingInfo!.avaliableSpotForNext24Hours}} свободни места за следващите 24ч.</p>
       <p *ngIf="isVisibleInformation('avaliableSpotForNext12Hours')">
-        {{parkingInfo?.avaliableSpotForNext12Hours!}} Free spots for next 12 hours</p>
-      <p *ngIf="isVisibleInformation('avaliableSpotForNext8Hours')">{{parkingInfo!.avaliableSpotForNext8Hours!}} Free
-        spots for next 8 hours</p>
-      <p *ngIf="isVisibleInformation('avaliableSpotForNext4Hours')">{{parkingInfo?.avaliableSpotForNext4Hours!}} Free
-        spots for next 4 hours</p>
-      <p *ngIf="isVisibleInformation('avaliableSpotForNext2Hours')">{{parkingInfo?.avaliableSpotForNext2Hours!}} Free
-        spots for next 2 hours</p>
+        {{parkingInfo?.avaliableSpotForNext12Hours!}} свободни места за следващите 12ч.</p>
+      <p *ngIf="isVisibleInformation('avaliableSpotForNext8Hours')">{{parkingInfo!.avaliableSpotForNext8Hours!}} свободни места за следващите 8ч.</p>
+      <p *ngIf="isVisibleInformation('avaliableSpotForNext4Hours')">{{parkingInfo?.avaliableSpotForNext4Hours!}} свободни места за следващите 4ч.</p>
+      <p *ngIf="isVisibleInformation('avaliableSpotForNext2Hours')">{{parkingInfo?.avaliableSpotForNext2Hours!}} свободни места за следващите 2ч.</p>
     </div>
     <div *ngIf="isPeriodSelected == true && !avSpots" class="spinner-border" role="status">
       <span class="sr-only">Loading...</span>
     </div>
     <div *ngIf="isPeriodSelected == true && avSpots">
-      {{avSpots.length}} avaliable spots for this period
+      {{avSpots.length}} свободни места за периода
     </div>
 
   </mat-card-content>
   <mat-card-actions>
-    <button *ngIf="authService.isLogged" mat-button (click)="showModal(childModal)" style="width:40%">Reserve</button>
+    <button *ngIf="authService.isLogged" mat-button (click)="showModal(childModal)" style="width:40%">Резервирай</button>
     <ng-template #childModal>
       <app-reserve-now [element]="modalRef2"></app-reserve-now>
       <div></div>
     </ng-template>
-    <button mat-button (click)="viewOnMap()" style="width:60%">View on map</button>
+    <button mat-button (click)="viewOnMap()" style="width:60%">Карта</button>
   </mat-card-actions>
 </mat-card>
 <div class="modal fade bd-example-modal-sm6" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel"

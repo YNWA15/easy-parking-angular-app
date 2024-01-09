@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { MdbModalRef } from 'mdb-angular-ui-kit/modal';
 import { GeolocationServices } from 'src/app/services/geolocation-services';
+import { ParkingServices } from 'src/app/services/parkings-services';
 
 @Component({
   selector: 'app-parking-on-map',
@@ -18,7 +19,8 @@ export class ParkingOnMapComponent {
   zoom = 12;
   constructor(
     public geolocationService: GeolocationServices,
-    public modalRef: MdbModalRef<ParkingOnMapComponent>
+    public modalRef: MdbModalRef<ParkingOnMapComponent>,
+    private parkingService: ParkingServices
   ) { }
   moveMap(event: google.maps.MapMouseEvent) {
     if (event.latLng != null) this.center = event.latLng.toJSON();
@@ -32,8 +34,8 @@ export class ParkingOnMapComponent {
   ngOnInit() {
     this.markers.push({
       position: {
-        lat: 42.692706,
-        lng: 23.326826,
+        lat: parseFloat(this.parkingService.selectedParking?.latitude?.toString()!),
+        lng: parseFloat(this.parkingService.selectedParking?.longitude?.toString()!),
       },
       label: {
         color: 'blue',

@@ -51,7 +51,5 @@ export class PaypalComponent implements OnDestroy, AfterViewInit {
     if(!this.isInEditMode){
       this.route.navigate(['/welcome']);
     } 
-
   }
 }
-

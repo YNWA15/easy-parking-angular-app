@@ -17,6 +17,10 @@ export class UserService {
     let url = 'https://localhost:44351/api/users';
     return (<any>this.http.get(url)) as Observable<any>;
   }
+  getUserByEmail(email: string): Observable<any> {
+    let url = `https://localhost:44351/api/users/byemail/${email}`;
+    return (<any>this.http.get(url)) as Observable<any>;
+  }
   cashOut(userId: number): Observable<any> {
     let url = 'https://localhost:44351/api/users/payCash/' + userId;
     return (<any>this.http.put(url, {})) as Observable<any>;

@@ -1,7 +1,5 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
 import { AuthenticationServices } from 'src/app/services/authentication-services';
 import { LoginServices } from 'src/app/services/login.services';
 
@@ -20,19 +18,8 @@ export class SignUpScreenComponent {
   constructor(
     private loginServices: LoginServices,
     private router: Router,
-    private http: HttpClient,
     private authService: AuthenticationServices
   ) { }
-
-  create(): Observable<any> {
-    return this.http.post<any>('https://localhost:44351/api/users/register', {
-      name: 'IV',
-      email: 'teeest@domain.bg',
-      password: 'P@ssw0rd',
-      phoneNumber: '0123456789',
-    });
-  }
-
   home() {
     this.router.navigate(['/welcome']);
   }
@@ -43,12 +30,12 @@ export class SignUpScreenComponent {
       this.name.nativeElement.value == null ||
       this.name.nativeElement.value == ''
     ) {
-      this.logInError.push('Cannot register user without a name !');
+      this.logInError.push('Не можете да регистрирате акаунт без име!');
     } else if (
       this.phoneNumber.nativeElement.value == null ||
       this.phoneNumber.nativeElement.value == ''
     ) {
-      this.logInError.push('Cannot register user without a phoneNumber !');
+      this.logInError.push('Не можете да регистрирате акаунт без телефонен номер!');
     } else {
       this.loginServices
         .signUpHttpClient(

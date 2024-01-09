@@ -2,15 +2,13 @@
     <div class="modalBodyContainter">
 
         <body style="background-color: transparent;">
-            Would you like to give us access to your position,
-            to be able to offer you the nearest parkings ?
-            <div *ngIf="geolocationService.denied">You have to give permission to geolocation position for
-                this site in your browser's settings</div>
+            Бихте ли дали достъп до местоположението ви, за да можете да видите своята локация до тази на паркинга.
+            <div *ngIf="geolocationService.denied">Трябва да го направите през настройките на браузъра</div>
         </body>
         <div class="modalButtons">
-            <button (click)="onSubmit()" type="button" class="btn " style="margin: 10px">Yes</button>
-            <button (click)="onNo()" type="button" class="btn " style="margin: 10px">No</button>
-            <button (click)="onClose()" type="button" class="btn " style="margin: 10px">Cancel</button>
+            <button (click)="onSubmit()" type="button" class="btn " style="margin: 10px">Да</button>
+            <button (click)="onNo()" type="button" class="btn " style="margin: 10px">Не</button>
+            <button (click)="onClose()" type="button" class="btn " style="margin: 10px">Откажи</button>
         </div>
     </div>
 </div>

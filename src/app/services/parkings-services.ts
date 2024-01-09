@@ -31,30 +31,17 @@ export class ParkingServices {
   getAvaliableParkingsForCustomPeriod(): Observable<any> {
     let startDate = this.avaliableParkingsFromDate!;
     let endDate = this.avaliableParkingsToDate!;
-    let url =
-      'https://localhost:44351/api/parkings/check/' +
-      startDate!.getFullYear().toString() +
-      '-' +
-      this.correctStringValue(startDate.getMonth(), true) +
-      '-' +
-      this.correctStringValue(startDate.getDate()) +
-      'T' +
-      this.correctStringValue(startDate!.getHours().toString()) +
-      '%3A' +
-      this.correctStringValue(startDate!.getMinutes().toString()).toString()
-      +
-      '%3A00/' +
-      endDate.getFullYear().toString() +
-      '-' +
-      this.correctStringValue(endDate.getMonth().toString(), true) +
-      '-' +
-      this.correctStringValue(endDate.getDate().toString()) +
-      'T' +
-      this.correctStringValue(endDate.getHours().toString()) +
-      '%3A' +
-      this.correctStringValue(endDate.getMinutes().toString())
-      +
-      '%3A00/';
+
+    let url = `https://localhost:44351/api/parkings/check/
+    ${startDate!.getFullYear().toString()}-${this.correctStringValue(startDate.getMonth(), true)}-
+    ${this.correctStringValue(startDate.getDate())}
+    T${this.correctStringValue(startDate!.getHours().toString())}%3A
+    ${this.correctStringValue(startDate!.getMinutes().toString()).toString()}%3A00/
+    ${endDate.getFullYear().toString()}-${this.correctStringValue(endDate.getMonth().toString(), true)}
+    -${this.correctStringValue(endDate.getDate().toString())}T
+    ${this.correctStringValue(endDate.getHours().toString())}%3A
+    ${this.correctStringValue(endDate.getMinutes().toString())}%3A00/`
+
     return (<any>this.http.get(url)) as Observable<any>;
   }
   getAvaliableSpotsInAParkingForCustomPeriod(parkingId: number): Observable<any> {
@@ -66,18 +53,23 @@ export class ParkingServices {
     return (<any>this.http.get(url)) as Observable<any>;
   }
   getAvaliableSpotsInAParkingForCustomPeriodFromNow(parkingId: number, endDate: Date): Observable<any> {
-    let url =
-      'https://localhost:44351/fromNow/' + parkingId + '/' +
-      endDate!.getFullYear().toString() +
-      '-' +
-      this.correctStringValue(endDate.getMonth(), true) +
-      '-' +
-      this.correctStringValue(endDate.getDate()) +
-      'T' +
-      this.correctStringValue(endDate!.getHours().toString()) +
-      '%3A' +
-      this.correctStringValue(endDate!.getMinutes().toString()).toString() +
-      '%3A00/';
+    // let url1 =
+    //   'https://localhost:44351/fromNow/' + parkingId + '/' +
+    //   endDate!.getFullYear().toString() +
+    //   '-' +
+    //   this.correctStringValue(endDate.getMonth(), true) +
+    //   '-' +
+    //   this.correctStringValue(endDate.getDate()) +
+    //   'T' +
+    //   this.correctStringValue(endDate!.getHours().toString()) +
+    //   '%3A' +
+    //   this.correctStringValue(endDate!.getMinutes().toString()).toString() +
+    //   '%3A00/';
+
+
+      let url =`https://localhost:44351/fromNow/${parkingId}/${endDate!.getFullYear().toString()}-
+      ${this.correctStringValue(endDate.getMonth(), true)}-${this.correctStringValue(endDate.getDate())}T
+      ${this.correctStringValue(endDate!.getHours().toString())}%3A${this.correctStringValue(endDate!.getMinutes().toString()).toString()}%3A00/`
     return (<any>this.http.get(url)) as Observable<any>;
   }
 

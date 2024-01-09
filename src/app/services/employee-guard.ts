@@ -19,6 +19,5 @@ export class EmployeeGuard implements CanActivate {
     else {
       return false;
     }
-
   }
 }

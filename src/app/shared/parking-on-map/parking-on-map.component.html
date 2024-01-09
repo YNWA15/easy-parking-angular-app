@@ -1,8 +1,10 @@
-<h3 class="info-text">The parking is marked with: <img src="../../../assets/marker/parking.png" alt=""></h3>
+<h3 class="info-text">Паркингът е на мястото на: <img src="../../../assets/marker/parking.png" alt=""></h3>
 <google-map height="450px" width="100%" [center]="center" [zoom]="zoom" (mapClick)="moveMap($event)"
   (mapMousemove)="move($event)" class="google-map">
   <map-marker #markerElem="mapMarker" *ngFor="let marker of markers" [position]="marker.position" [title]="marker.title"
     [options]="marker.options" [icon]=" marker.icon" label-class="test">
   </map-marker>
 </google-map>
-<button class="close-button" class="btn" (click)="closeMap()">CLOSE</button>
+<button class="close-button btn" style="margin: auto; margin-top: 10px; margin-bottom: 10px;
+justify-content: center;
+display: flex;" (click)="closeMap()">Затвори</button>

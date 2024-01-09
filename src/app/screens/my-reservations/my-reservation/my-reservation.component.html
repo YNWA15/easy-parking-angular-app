@@ -4,21 +4,21 @@
     </mat-card-header>
     <img mat-card-image src="../../../../assets/reservation.png.png" />
     <mat-card-content>
-        <p>Created on: {{reservation.createdResrvationTime! | date:"MMM dd, yyyy HH:mm"}}</p>
-        <p>Paid from: {{reservation.startReservationPeriod! |date:"MMM dd, yyyy HH:mm"}}</p>
-        <p>Paid till: {{reservation.endReservationPeriod |date:"MMM dd, yyyy HH:mm"}}</p>
-        <p>Parking: {{parking?.name}}</p>
-        <p>Address: {{parking?.address}}</p>
-        <p>Car Reg: {{reservation?.carRegNumber}}</p>
-        <p *ngIf="!reservation?.isStarted">Start After: {{startAfter()}}</p>
-        <p *ngIf="reservation?.isStarted">Start After: STARTED</p>
-        <p>Price: {{reservation.price}}</p>
+        <p>Направена: {{reservation.createdResrvationTime! | date:"MMM dd, yyyy HH:mm"}}</p>
+        <p>Платена от: {{reservation.startReservationPeriod! |date:"MMM dd, yyyy HH:mm"}}</p>
+        <p>Платена до: {{reservation.endReservationPeriod |date:"MMM dd, yyyy HH:mm"}}</p>
+        <p>Паркинг: {{parking?.name}}</p>
+        <p>Адрес: {{parking?.address}}</p>
+        <p>Рег. номер: {{reservation?.carRegNumber}}</p>
+        <p *ngIf="!reservation?.isStarted">Започва след: {{startAfter()}}</p>
+        <p *ngIf="reservation?.isStarted">Започнала</p>
+        <p>Цена: {{reservation.price}}лв.</p>
     </mat-card-content>
     <mat-card-actions>
-        <button mat-button *ngIf="!reservation?.isStarted" (click)="showModal3(childModal1)">Change car</button>
+        <button mat-button *ngIf="!reservation?.isStarted" (click)="showModal3(childModal1)">Промени колата</button>
         <button *ngIf="reservation?.isStarted ||isReservationStartsSoon()" (click)="showModal(childModal4)"
-            mat-button>+1hr</button>
-        <button mat-button *ngIf="!reservation?.isStarted" (click)="showModal2(childModal3)">Cancel</button>
+            mat-button>+1ч.</button>
+        <button mat-button *ngIf="!reservation?.isStarted" (click)="showModal2(childModal3)">Отмени</button>
     </mat-card-actions>
 </mat-card>
 <ng-template #childModal1>

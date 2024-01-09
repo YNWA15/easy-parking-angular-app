@@ -1,11 +1,11 @@
 <mat-card class="mat-elevation-z4 mat-card">
   <mat-card-header>
-    <mat-card-title>spot {{spot.id}}</mat-card-title>
+    <mat-card-title>Място: {{spot.id}}</mat-card-title>
   </mat-card-header>
   <img class="img" mat-card-image src="../../../../../assets/busySpot2.png" />
   <mat-card-content>
-    <p>Reservation started at: {{currReservation?.startReservationPeriod | date:"short"}}</p>
-    <p>End at: {{currReservation?.endReservationPeriod | date:"short"}}</p>
+    <p>Започнала: {{currReservation?.startReservationPeriod | date:"short"}}</p>
+    <p>Завършва: {{currReservation?.endReservationPeriod | date:"short"}}</p>
     <p>{{currReservation?.user?.email}}</p>
   </mat-card-content>
   <mat-card-actions>

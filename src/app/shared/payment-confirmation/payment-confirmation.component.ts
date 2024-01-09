@@ -30,6 +30,7 @@ export class PaymentConfirmationComponent implements OnInit, OnDestroy {
     private modalRef3: MdbModalRef<ReserveNowComponent>,
     private reservationService: ReservationService, private parkingService: ParkingServices, private datePickerService: DatePickerService,
     private router: Router) { }
+
   ngOnDestroy(): void {
     if (this.reservationService.currentReservation!.id && this.reservationService.currentReservation!.isPaid == false) {
       this.reservationService.deleteReservation(this.reservationService.currentReservation!.id).subscribe();
@@ -48,7 +49,7 @@ export class PaymentConfirmationComponent implements OnInit, OnDestroy {
   }
 
   aproved() {
-    debugger
+    //this.authServie.loggedUser.parkCredits = 0;
     if (this.reservationService.isReserveFromNow) {
       var a = this.approved.toString();
       if (a == 'false') {
@@ -59,7 +60,6 @@ export class PaymentConfirmationComponent implements OnInit, OnDestroy {
               this.reservation = x;
               this.reservationService.currentReservation = x;
               if (this.reservation!.price > this.authServie.loggedUser.parkCredits!) {
-
                 this.haveToPay = true;
                 this.amauntToPay = this.reservation?.price! - this.authServie.loggedUser.parkCredits!
                 this.paymessage = 'Тъй като имате ' + this.authServie.loggedUser.parkCredits! + ' кредита, трябва да заплатите ' + this.amauntToPay + ' лв., за да завършите резервацията.';
@@ -68,18 +68,17 @@ export class PaymentConfirmationComponent implements OnInit, OnDestroy {
                 this.reservationService.removeCreditsFromUserForReservation(this.authServie.loggedUser.id, this.reservation?.price!).subscribe();
                 this.reservationService.currentReservation!.isPaid = true;
                 this.reservationService.payReservation(this.reservationService.currentReservation!.id).subscribe();
-                this.authServie.loggedUser.parkCredits = this.authServie.loggedUser.parkCredits! - this.reservation?.price!;
-                this.paymessage = 'Тъй като имате ' + this.authServie.loggedUser.parkCredits! + ' кредита, не е нужно да заплащате допълнителна сума! Мястото е резервирано !';
+               this.paymessage = 'Тъй като имате ' + this.authServie.loggedUser.parkCredits! + ' кредита, не е нужно да заплащате допълнителна сума! Мястото е резервирано!';
                 setTimeout(() => {
                   this.router.navigate(['/welcome']);
                   this.modalRef?.close();
                   this.modalRef3.close();
-
+                  this.authServie.loggedUser.parkCredits = this.authServie.loggedUser.parkCredits! - this.reservation?.price!;
+                
                 }, 2500)
               }
             })
           }
-
         })
       }
     } else {
@@ -93,12 +92,10 @@ export class PaymentConfirmationComponent implements OnInit, OnDestroy {
               this.reservation = x;
               this.reservationService.currentReservation = x;
               if (this.reservation!.price > this.authServie.loggedUser.parkCredits!) {
-
                 this.haveToPay = true;
                 this.amauntToPay = this.reservation?.price! - this.authServie.loggedUser.parkCredits!
                 this.paymessage = 'Тъй като имате ' + this.authServie.loggedUser.parkCredits! + ' кредита, трябва да заплатите ' + this.amauntToPay + ' лв., за да завършите резервацията.';
               } else {
-
                 this.haveToPay = false;
                 this.reservationService.removeCreditsFromUserForReservation(this.authServie.loggedUser.id, this.reservation?.price!).subscribe();
                 this.reservationService.currentReservation!.isPaid = true;

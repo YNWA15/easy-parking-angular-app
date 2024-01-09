@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Reservation, User } from 'src/app/models';
-import { AuthenticationServices } from 'src/app/services/authentication-services';
 import { ReservationService } from 'src/app/services/reservation.service';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-my-reservations',
@@ -14,15 +14,15 @@ export class MyReservationsComponent implements OnInit {
   reservations!: Reservation[];
   activeReservations!: Reservation[];
 
-  constructor( private reservationService: ReservationService) { }
+  constructor(private reservationService: ReservationService, private userService: UserService) { }
   ngOnInit(): void {
     this.userEmail = localStorage.getItem('email')!;
-
-    this.reservationService.getUserNotEndedReservations(1).subscribe(x => {
-      this.activeReservations = x;
+    this.userService.getUserByEmail(this.userEmail!).subscribe(x => {
+      this.reservationService.getUserNotEndedReservations(x.id).subscribe(x => {
+        this.activeReservations = x;
+      })
     })
   }
-//
   refreshReservations() {
     setTimeout(() => {
       this.reservationService.getUserNotEndedReservations(1).subscribe(x => {
