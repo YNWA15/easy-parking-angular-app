@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Parking, Reservation } from 'src/app/models';
+import { AuthenticationServices } from 'src/app/services/authentication-services';
 
 @Component({
   selector: 'app-employee-portal',
@@ -13,5 +14,5 @@ export class EmployeePortalComponent {
   reservations!: Reservation[];
   futureReservations!: Reservation[];
 
-  constructor() {}
+  constructor(public authService: AuthenticationServices) {}
 }

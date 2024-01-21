@@ -1,3 +1,4 @@
+<div style="font-size: large; text-align: center;" *ngIf="this.authService.emplyeeParkingId">Паркинг: {{this.authService.emplyeeParkingId}}</div>
 <ul class="nav nav-tabs tabs">
   <li><button id="btnBusy" class="btn tab-btn" (click)="screen='busySpots'">Заети места</button></li>
   <li><button class="btn tab-btn" (click)="screen='reservations'">Резервации</button></li>

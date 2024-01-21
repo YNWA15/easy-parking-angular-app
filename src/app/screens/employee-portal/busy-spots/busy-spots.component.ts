@@ -10,7 +10,7 @@ import { ReservationService } from 'src/app/services/reservation.service';
   styleUrls: ['./busy-spots.component.scss']
 })
 export class BusySpotsComponent implements OnInit {
-  constructor(private parkingService: ParkingServices, private reservationService: ReservationService, private authService: AuthenticationServices) { }
+  constructor(private parkingService: ParkingServices, private reservationService: ReservationService, public authService: AuthenticationServices) { }
   ngOnInit(): void {
     this.parkingService.getBusySpotsOnParking(this.authService.emplyeeParkingId!).subscribe(x => {//////////////
       this.busyParkingSpots = x;

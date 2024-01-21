@@ -11,7 +11,7 @@
         (click)="timePickerService.timeForStartPeriod = null" type="button" class="btn btn-primary" data-toggle="modal"
         data-target=".bd-example-modal-sm16">час за начало</button>
       <button style="width: 48%; background-color: #55595d82;  margin: auto;" *ngIf="showTimePickerForEnd" type="button"
-        class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-sm17">час за kraй</button>
+        class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-sm17">час за край</button>
     </div>
     <div
       *ngIf="datePickerService.dateRangePickerStartDate !== null && datePickerService.dateRangePickerEndDate !== null  && timePickerService.timeForStartPeriod !== null && timePickerService.timeForEndPeriod !== null && errorPeriod()">
@@ -35,9 +35,9 @@
       <div *ngIf="registrationNumberForTheReservation!= null && registrationNumberForTheReservation!= ''">
         <h3>Резервирай парко място за автомобил с регистрационен номер {{registrationNumberForTheReservation}} от
           {{timePickerService.timeForStartPeriod?.getHours()}}:{{timePickerService.timeForStartPeriod?.getMinutes()}} на
-          {{datePickerService.dateRangePickerStartDate?.getDate()}}.{{datePickerService.dateRangePickerStartDate?.getMonth()}}.{{datePickerService.dateRangePickerStartDate?.getFullYear()}}
+          {{datePickerService.dateRangePickerStartDate?.getDate()}}.{{datePickerService.dateRangePickerStartDate?.getMonth()! + 1}}.{{datePickerService.dateRangePickerStartDate?.getFullYear()}}
           до {{timePickerService.timeForEndPeriod?.getHours()}}:{{timePickerService.timeForEndPeriod?.getMinutes()}} на
-          {{datePickerService.dateRangePickerEndDate?.getDate()}}.{{datePickerService.dateRangePickerEndDate?.getMonth()}}.{{datePickerService.dateRangePickerEndDate?.getFullYear()}}
+          {{datePickerService.dateRangePickerEndDate?.getDate()}}.{{datePickerService.dateRangePickerEndDate?.getMonth()! + 1}}.{{datePickerService.dateRangePickerEndDate?.getFullYear()}}
         </h3>
       </div>
       <div style="    display: flex;">

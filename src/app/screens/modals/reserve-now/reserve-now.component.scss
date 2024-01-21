@@ -4,12 +4,14 @@ igx-time-picker {
 
 
 
-table{
+table {
     border-collapse: collapse;
     width: 45%;
     margin: auto;
 }
-th,td {
+
+th,
+td {
     border: 2px solid #405f7e;
     padding: 2px;
     text-align: center;
@@ -19,17 +21,23 @@ th {
     text-align: center;
 }
 
-.btn{
+.btn {
     width: 170px !important;
 }
 
-// .modal-dialog{
-//     margin-top: 15%!important;
-//     border: 1px solid red;
-// }
+.head {
+    text-align: center;
+    margin-top: 15px;
+    font-family: cursive;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
 
-
-// .modal-content{
-//     height: 100% !important;
-
-//   }
+.pricesHead {
+    margin: auto;
+    text-align: center;
+    font-family: cursive;
+}
+.subHead{
+    text-align: center; font-family: cursive;
+}
